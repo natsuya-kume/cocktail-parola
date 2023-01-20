@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "run-p dev:*",
+    "dev:next": "next dev",
+    "dev:path": "pathpida --watch",
+    "build": "pathpida && next build",
     "start": "next start",
     "lint": "next lint --dir src",
     "lint:fix": "yarn lint --fix",
@@ -36,6 +38,8 @@
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.3.0",
     "eslint-config-prettier": "^8.6.0",
+    "npm-run-all": "^4.1.5",
+    "pathpida": "^0.20.1",
     "prettier": "^2.8.3"
   }
 }
