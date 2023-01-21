@@ -5,7 +5,6 @@ import { appRoutes } from 'src/config/routes/appRoutes'
 import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/SidebarItem'
 import { SidebarItemCollapse } from 'src/components/elements/Sidebar/SidebarItemCollapse/SidebarItemCollapse'
 import { memo } from 'react'
-import LocalBarIcon from '@mui/icons-material/LocalBar'
 import { theme } from 'src/config/theme'
 export const Sidebar = memo(() => {
   return (
@@ -27,9 +26,10 @@ export const Sidebar = memo(() => {
       <List disablePadding>
         <Toolbar sx={{ marginBottom: '20px' }}>
           <Stack sx={{ width: '100%' }} direction='row' justifyContent='center'>
-            <Avatar sx={{ backgroundColor: theme.palette.background.default }}>
-              <LocalBarIcon sx={{ color: theme.palette.text.secondary }} />
-            </Avatar>
+            <Avatar
+              sx={{ backgroundColor: theme.palette.background.default }}
+              src='/images/cocktail.jpeg'
+            />
           </Stack>
         </Toolbar>
         {appRoutes.map((route, index) =>
