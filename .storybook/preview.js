@@ -1,5 +1,9 @@
 import { ThemeProvider } from '@mui/material'
+import { Provider } from 'react-redux'
+import { store } from 'src/stores/store'
 import { theme } from '../src/config/theme'
+import { RouterContext } from 'next/dist/shared/lib/router-context'
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -8,12 +12,17 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  nextRouter: {
+    Provider: RouterContext.Provider,
+  },
 }
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider theme={theme}>
-      <Story />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Story />
+      </ThemeProvider>
+    </Provider>
   ),
 ]

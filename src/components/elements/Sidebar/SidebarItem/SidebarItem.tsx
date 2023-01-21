@@ -1,5 +1,5 @@
 import { memo, useCallback } from 'react'
-import { ListItemButton, ListItemIcon } from '@mui/material'
+import { ListItemButton, ListItemIcon, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import { useSelector, useDispatch } from 'react-redux'
 import { colorConfigs } from 'src/config/color'
@@ -45,7 +45,13 @@ export const SidebarItem = memo(({ item }: Props) => {
       >
         {item.sidebarProps.icon}
       </ListItemIcon>
-      {item.sidebarProps.displayText}
+      <Typography
+        sx={{
+          color: colorConfigs.sidebar.fontColor,
+        }}
+      >
+        {item.sidebarProps.displayText}
+      </Typography>
     </ListItemButton>
   )
 })

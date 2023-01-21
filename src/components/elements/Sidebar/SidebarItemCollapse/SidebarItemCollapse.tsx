@@ -56,7 +56,15 @@ export const SidebarItemCollapse = memo(({ item }: Props) => {
         </ListItemIcon>
         <ListItemText
           disableTypography
-          primary={<Typography>{item.sidebarProps.displayText}</Typography>}
+          primary={
+            <Typography
+              sx={{
+                color: colorConfigs.sidebar.fontColor,
+              }}
+            >
+              {item.sidebarProps.displayText}
+            </Typography>
+          }
         />
         {renderExpandIcon}
       </ListItemButton>
