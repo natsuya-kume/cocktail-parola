@@ -1,6 +1,5 @@
 import React from 'react'
-type Props = {}
 
-export const ButtonPage = (props: Props) => {
+export default function ButtonPage() {
   return <div>Button</div>
 }

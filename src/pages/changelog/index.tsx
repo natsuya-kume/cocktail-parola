@@ -1,6 +1,5 @@
 import React from 'react'
-type Props = {}
 
-export const ChangelogPage = (props: Props) => {
+export default function ChangelogPage() {
   return <div>Changelog</div>
 }

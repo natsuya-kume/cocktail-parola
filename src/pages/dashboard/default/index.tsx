@@ -1,6 +1,5 @@
 import React from 'react'
-type Props = {}
 
-export const DefaultPage = (props: Props) => {
+export default function DefaultPage() {
   return <div>Default</div>
 }

@@ -1,6 +1,5 @@
 import React from 'react'
-type Props = {}
 
-export const AlertPage = (props: Props) => {
+export default function AlertPage() {
   return <div>Alert</div>
 }

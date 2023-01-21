@@ -1,6 +1,5 @@
 import React from 'react'
-type Props = {}
 
-export const AnalyticsPage = (props: Props) => {
+export default function AnalyticsPage() {
   return <div>Analytics</div>
 }

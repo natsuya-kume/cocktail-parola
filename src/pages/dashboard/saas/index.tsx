@@ -1,6 +1,5 @@
 import React from 'react'
-type Props = {}
 
-export const SaasPage = (props: Props) => {
+export default function SaasPage() {
   return <div>Saas</div>
 }

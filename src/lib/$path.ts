@@ -15,11 +15,23 @@ export const pagesPath = {
         hash: url?.hash,
       }),
     },
+    componentLayout: {
+      $url: (url?: { hash?: string }) => ({
+        pathname: '/component/componentLayout' as const,
+        hash: url?.hash,
+      }),
+    },
   },
   dashboard: {
     analytics: {
       $url: (url?: { hash?: string }) => ({
         pathname: '/dashboard/analytics' as const,
+        hash: url?.hash,
+      }),
+    },
+    dashBoardIndex: {
+      $url: (url?: { hash?: string }) => ({
+        pathname: '/dashboard/dashBoardIndex' as const,
         hash: url?.hash,
       }),
     },
@@ -35,6 +47,13 @@ export const pagesPath = {
         hash: url?.hash,
       }),
     },
+    $url: (url?: { hash?: string }) => ({ pathname: '/dashboard' as const, hash: url?.hash }),
+  },
+  documentation: {
+    $url: (url?: { hash?: string }) => ({ pathname: '/documentation' as const, hash: url?.hash }),
+  },
+  installation: {
+    $url: (url?: { hash?: string }) => ({ pathname: '/installation' as const, hash: url?.hash }),
   },
   $url: (url?: { hash?: string }) => ({ pathname: '/' as const, hash: url?.hash }),
 }

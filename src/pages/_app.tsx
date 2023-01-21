@@ -5,6 +5,9 @@ import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider, EmotionCache } from '@emotion/react'
 import theme from 'src/lib/theme'
 import createEmotionCache from 'src/lib/createEmotionCache'
+import { MainLayout } from 'src/components/layouts/MainLayout/MainLayout'
+import { Provider } from 'react-redux'
+import { store } from 'src/stores/store'
 
 const clientSideEmotionCache = createEmotionCache()
 interface MyAppProps extends AppProps {
@@ -18,10 +21,14 @@ function MyApp(props: MyAppProps) {
       <Head>
         <meta name='viewport' content='initial-scale=1, width=device-width' />
       </Head>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <MainLayout>
+            <Component {...pageProps} />
+          </MainLayout>
+        </ThemeProvider>
+      </Provider>
     </CacheProvider>
   )
 }
