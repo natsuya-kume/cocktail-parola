@@ -4,12 +4,16 @@ import { colorConfigs } from 'src/config/color'
 import { sizeConfigs } from 'src/config/size'
 import { theme } from 'src/config/theme'
 
-export const Topbar = memo(() => {
+type Props = {
+  hasSidebar?: boolean
+}
+
+export const Topbar = memo(({ hasSidebar = true }: Props) => {
   return (
     <AppBar
       position='fixed'
       sx={{
-        width: `calc(100% - ${sizeConfigs.sidebar.width})`,
+        width: hasSidebar ? `calc(100% - ${sizeConfigs.sidebar.width})` : '100%',
         ml: sizeConfigs.sidebar.width,
         boxShadow: '0 5px 10px 0 rgb(0 0 0 / 15%)',
         backgroundColor: colorConfigs.topbar.bg,

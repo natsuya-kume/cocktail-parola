@@ -19,6 +19,7 @@ export const Sidebar = memo(() => {
           borderRight: '0px',
           backgroundColor: colorConfigs.sidebar.bg,
           color: colorConfigs.sidebar.fontColor,
+          boxShadow: '0 0px 10px 0 rgb(0 0 0 / 15%)',
         },
       }}
     >
