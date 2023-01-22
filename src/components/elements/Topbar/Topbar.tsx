@@ -22,7 +22,7 @@ export const Topbar = memo(({ hasSidebar = true }: Props) => {
     >
       <Toolbar>
         <Typography variant='h6' sx={{ color: theme.palette.text.primary }}>
-          React sidebar with dropdown
+          Cocktail Parola
         </Typography>
       </Toolbar>
     </AppBar>
