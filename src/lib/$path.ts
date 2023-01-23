@@ -2,6 +2,15 @@ export const pagesPath = {
   changelog: {
     $url: (url?: { hash?: string }) => ({ pathname: '/changelog' as const, hash: url?.hash }),
   },
+  cocktail: {
+    _slug: (slug: string | number) => ({
+      $url: (url?: { hash?: string }) => ({
+        pathname: '/cocktail/[slug]' as const,
+        query: { slug },
+        hash: url?.hash,
+      }),
+    }),
+  },
   component: {
     alert: {
       $url: (url?: { hash?: string }) => ({

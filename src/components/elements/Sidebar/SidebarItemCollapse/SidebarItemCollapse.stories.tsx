@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { SidebarItemCollapse } from 'src/components/elements/Sidebar/SidebarItemCollapse/SidebarItemCollapse'
 import { appRoutes } from 'src/config/routes/appRoutes'
+import { SidebarNavigationsType } from 'src/config/routes/routeType'
 import { theme } from 'src/config/theme'
 
 export default {
@@ -11,7 +12,7 @@ export default {
 export const Default: ComponentStory<typeof SidebarItemCollapse> = () => {
   return (
     <div style={{ backgroundColor: theme.palette.background.default }}>
-      <SidebarItemCollapse item={appRoutes[2]} />
+      <SidebarItemCollapse item={appRoutes[2] as SidebarNavigationsType} />
     </div>
   )
 }

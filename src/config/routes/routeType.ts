@@ -18,4 +18,5 @@ export type SidebarNavigationsType = {
   sidebarProps?: {
     displayText: string
   }
+  child?: SidebarNavigationsType[]
 }

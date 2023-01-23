@@ -8,14 +8,16 @@ import {
 } from '@mui/material'
 import { memo, useEffect, useMemo, useState } from 'react'
 import { colorConfigs } from 'src/config/color'
-import { RouteType } from 'src/config/routes/routeType'
+import { SidebarNavigationsType } from 'src/config/routes/routeType'
 import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined'
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined'
 import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/SidebarItem'
 import { useSelector } from 'react-redux'
 import { RootState } from 'src/stores/store'
+import LocalBarOutlinedIcon from '@mui/icons-material/LocalBarOutlined'
+
 type Props = {
-  item: RouteType
+  item: SidebarNavigationsType
 }
 
 export const SidebarItemCollapse = memo(({ item }: Props) => {
@@ -52,7 +54,8 @@ export const SidebarItemCollapse = memo(({ item }: Props) => {
             color: colorConfigs.sidebar.fontColor,
           }}
         >
-          {item.sidebarProps.icon}
+          {/* {item.sidebarProps.icon} */}
+          <LocalBarOutlinedIcon />
         </ListItemIcon>
         <ListItemText
           disableTypography

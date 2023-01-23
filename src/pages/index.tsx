@@ -27,6 +27,7 @@ export const getStaticProps = async () => {
     const { base64 } = await getPlaiceholder(cocktail.image.url)
     cocktail.image.blurDataURL = base64
   }
+  console.log(cocktails)
   return {
     props: {
       cocktails: cocktails,

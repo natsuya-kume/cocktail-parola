@@ -3,11 +3,13 @@ import { ListItemButton, ListItemIcon, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import { useSelector, useDispatch } from 'react-redux'
 import { colorConfigs } from 'src/config/color'
-import { RouteType } from 'src/config/routes/routeType'
+import { SidebarNavigationsType } from 'src/config/routes/routeType'
 import { RootState } from 'src/stores/store'
 import { setSidebarItemState } from 'src/stores/features/sidebar/sidebarItemStateSlice'
+import LocalBarOutlinedIcon from '@mui/icons-material/LocalBarOutlined'
+import { pagesPath } from 'src/lib/$path'
 type Props = {
-  item: RouteType
+  item: SidebarNavigationsType
 }
 
 export const SidebarItem = memo(({ item }: Props) => {
@@ -19,7 +21,7 @@ export const SidebarItem = memo(({ item }: Props) => {
       dispatch(setSidebarItemState(item.state))
     }
     if (!item.path) return
-    router.push(item.path)
+    router.push(pagesPath.cocktail._slug(item.path).$url())
   }, [dispatch, item.path, item.state, router])
 
   if (!item.sidebarProps || !item.path) {
@@ -43,7 +45,8 @@ export const SidebarItem = memo(({ item }: Props) => {
           color: colorConfigs.sidebar.fontColor,
         }}
       >
-        {item.sidebarProps.icon}
+        {/* {item.sidebarProps.icon} */}
+        <LocalBarOutlinedIcon />
       </ListItemIcon>
       <Typography
         sx={{
