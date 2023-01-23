@@ -8,6 +8,7 @@ import { theme } from 'src/config/theme'
 import { useAtom } from 'jotai'
 import { cocktailsAtom } from 'src/stores/atom'
 import { useSidebar } from 'src/components/elements/Sidebar/useSidebar'
+import Link from 'next/link'
 export const Sidebar = memo(() => {
   const [cocktails] = useAtom(cocktailsAtom)
   const { sidebarNavigations } = useSidebar(cocktails)
@@ -30,10 +31,12 @@ export const Sidebar = memo(() => {
       <List disablePadding>
         <Toolbar sx={{ marginBottom: '20px' }}>
           <Stack sx={{ width: '100%' }} direction='row' justifyContent='center'>
-            <Avatar
-              sx={{ backgroundColor: theme.palette.background.default }}
-              src='/images/cocktail.jpeg'
-            />
+            <Link href='/'>
+              <Avatar
+                sx={{ backgroundColor: theme.palette.background.default }}
+                src='/images/cocktail.jpeg'
+              />
+            </Link>
           </Stack>
         </Toolbar>
         {sidebarNavigations.map((route, index) =>
