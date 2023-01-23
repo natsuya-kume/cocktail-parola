@@ -11,3 +11,11 @@ export type RouteType = {
     icon?: ReactNode
   }
 }
+
+export type SidebarNavigationsType = {
+  path: string
+  state: string
+  sidebarProps?: {
+    displayText: string
+  }
+}

@@ -1,8 +1,6 @@
 import DashboardLayout from 'src/pages/dashboard'
-import HomePage from 'src/pages/index'
 import { RouteType } from 'src/config/routes/routeType'
 import DefaultPage from 'src/pages/dashboard/default'
-import DashboardIndex from 'src/pages/dashboard/dashBoardIndex'
 import ChangelogPage from 'src/pages/changelog'
 import AnalyticsPage from 'src/pages/dashboard/analytics'
 import SaasPage from 'src/pages/dashboard/saas'
@@ -18,11 +16,6 @@ import InstallationPage from 'src/pages/installation'
 import DocumentationPage from 'src/pages/documentation'
 
 export const appRoutes: RouteType[] = [
-  {
-    index: true,
-    element: <HomePage />,
-    state: 'home',
-  },
   {
     path: '/installation',
     element: <InstallationPage />,
@@ -41,11 +34,6 @@ export const appRoutes: RouteType[] = [
       icon: <DashboardOutlinedIcon />,
     },
     child: [
-      {
-        index: true,
-        element: <DashboardIndex />,
-        state: 'dashboard.index',
-      },
       {
         path: '/dashboard/default',
         element: <DefaultPage />,

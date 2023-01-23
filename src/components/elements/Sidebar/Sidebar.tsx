@@ -1,12 +1,17 @@
 import { Avatar, Drawer, List, Stack, Toolbar } from '@mui/material'
 import { colorConfigs } from 'src/config/color'
 import { sizeConfigs } from 'src/config/size'
-import { appRoutes } from 'src/config/routes/appRoutes'
 import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/SidebarItem'
 import { SidebarItemCollapse } from 'src/components/elements/Sidebar/SidebarItemCollapse/SidebarItemCollapse'
 import { memo } from 'react'
 import { theme } from 'src/config/theme'
+import { appRoutes } from 'src/config/routes/appRoutes'
+import { useAtom } from 'jotai'
+import { cocktailsAtom } from 'src/stores/atom'
+import { useSidebar } from 'src/components/elements/Sidebar/useSidebar'
 export const Sidebar = memo(() => {
+  const [cocktails] = useAtom(cocktailsAtom)
+  const {} = useSidebar(cocktails)
   return (
     <Drawer
       variant='permanent'
