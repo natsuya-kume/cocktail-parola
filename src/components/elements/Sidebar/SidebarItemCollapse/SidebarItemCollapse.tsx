@@ -13,8 +13,8 @@ import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined'
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined'
 import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/SidebarItem'
 import LocalBarOutlinedIcon from '@mui/icons-material/LocalBarOutlined'
-import { useAtom } from 'jotai'
 import { activeSidebarItemAtom } from 'src/stores/atom'
+import { useAtomValue } from 'jotai'
 
 type Props = {
   item: SidebarNavigationsType
@@ -22,7 +22,7 @@ type Props = {
 
 export const SidebarItemCollapse = memo(({ item }: Props) => {
   const [open, setOpen] = useState(false)
-  const [sidebarItemState, _] = useAtom(activeSidebarItemAtom)
+  const sidebarItemState = useAtomValue(activeSidebarItemAtom)
   useEffect(() => {
     if (sidebarItemState.activeSidebarItemState.includes(item.state)) {
       setOpen(true)

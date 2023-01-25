@@ -2,14 +2,14 @@ import { getAllCocktails } from 'src/domain/cocktails/api/getCocktail'
 import { CocktailsType } from 'src/domain/cocktails/types/cocktail'
 import { getPlaiceholder } from 'plaiceholder'
 import { Cocktails } from 'src/features/cocktail/components/Cocktails'
-import { useAtom } from 'jotai'
+import { useSetAtom } from 'jotai'
 import { cocktailsAtom } from 'src/stores/atom'
 type Props = {
   cocktails: CocktailsType[]
 }
 
 const HomePage = ({ cocktails }: Props) => {
-  const [_, setCocktails] = useAtom(cocktailsAtom)
+  const setCocktails = useSetAtom(cocktailsAtom)
 
   setCocktails(cocktails)
   return <Cocktails />

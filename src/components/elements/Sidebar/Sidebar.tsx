@@ -5,15 +5,15 @@ import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/Sidebar
 import { SidebarItemCollapse } from 'src/components/elements/Sidebar/SidebarItemCollapse/SidebarItemCollapse'
 import { memo, useEffect } from 'react'
 import { theme } from 'src/config/theme'
-import { useAtom } from 'jotai'
 import { cocktailsAtom, activeSidebarItemAtom } from 'src/stores/atom'
 import { useSidebar } from 'src/components/elements/Sidebar/useSidebar'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useSetAtom, useAtomValue } from 'jotai'
 
 export const Sidebar = memo(() => {
-  const [cocktails] = useAtom(cocktailsAtom)
-  const [_, setActiveSidebarItemState] = useAtom(activeSidebarItemAtom)
+  const cocktails = useAtomValue(cocktailsAtom)
+  const setActiveSidebarItemState = useSetAtom(activeSidebarItemAtom)
   const { sidebarNavigations } = useSidebar(cocktails)
   const router = useRouter()
 
