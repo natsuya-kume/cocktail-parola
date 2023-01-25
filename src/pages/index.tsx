@@ -4,16 +4,13 @@ import { getPlaiceholder } from 'plaiceholder'
 import { Cocktails } from 'src/features/cocktail/components/Cocktails'
 import { useAtom } from 'jotai'
 import { cocktailsAtom } from 'src/stores/atom'
-
 type Props = {
-  cocktails?: CocktailsType[]
+  cocktails: CocktailsType[]
 }
 
 const HomePage = ({ cocktails }: Props) => {
   const [_, setCocktails] = useAtom(cocktailsAtom)
-  if (!cocktails) {
-    return <></>
-  }
+
   setCocktails(cocktails)
   return <Cocktails />
 }
@@ -27,7 +24,6 @@ export const getStaticProps = async () => {
     const { base64 } = await getPlaiceholder(cocktail.image.url)
     cocktail.image.blurDataURL = base64
   }
-  console.log(cocktails)
   return {
     props: {
       cocktails: cocktails,

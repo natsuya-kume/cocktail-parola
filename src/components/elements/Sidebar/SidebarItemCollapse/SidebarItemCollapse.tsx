@@ -12,9 +12,9 @@ import { SidebarNavigationsType } from 'src/config/routes/routeType'
 import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined'
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined'
 import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/SidebarItem'
-import { useSelector } from 'react-redux'
-import { RootState } from 'src/stores/store'
 import LocalBarOutlinedIcon from '@mui/icons-material/LocalBarOutlined'
+import { useAtom } from 'jotai'
+import { activeSidebarItemAtom } from 'src/stores/atom'
 
 type Props = {
   item: SidebarNavigationsType
@@ -22,10 +22,9 @@ type Props = {
 
 export const SidebarItemCollapse = memo(({ item }: Props) => {
   const [open, setOpen] = useState(false)
-  const { sidebarItemState } = useSelector((state: RootState) => state.sidebarItemState)
-
+  const [sidebarItemState, _] = useAtom(activeSidebarItemAtom)
   useEffect(() => {
-    if (sidebarItemState.includes(item.state)) {
+    if (sidebarItemState.activeSidebarItemState.includes(item.state)) {
       setOpen(true)
     }
   }, [sidebarItemState, item])

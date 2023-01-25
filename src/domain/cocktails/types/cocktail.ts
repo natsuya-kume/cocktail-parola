@@ -12,4 +12,12 @@ export type CocktailsType = {
   description: string
   cocktailType: string
   howToMake: string
+  createdAt?: string
+  updatedAt?: string
+  revisedAt?: string
+}
+
+export type SlugType = {
+  name: string
+  slug: string
 }

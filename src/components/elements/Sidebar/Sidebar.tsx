@@ -3,15 +3,25 @@ import { colorConfigs } from 'src/config/color'
 import { sizeConfigs } from 'src/config/size'
 import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/SidebarItem'
 import { SidebarItemCollapse } from 'src/components/elements/Sidebar/SidebarItemCollapse/SidebarItemCollapse'
-import { memo } from 'react'
+import { memo, useEffect } from 'react'
 import { theme } from 'src/config/theme'
 import { useAtom } from 'jotai'
-import { cocktailsAtom } from 'src/stores/atom'
+import { cocktailsAtom, activeSidebarItemAtom } from 'src/stores/atom'
 import { useSidebar } from 'src/components/elements/Sidebar/useSidebar'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+
 export const Sidebar = memo(() => {
   const [cocktails] = useAtom(cocktailsAtom)
+  const [_, setActiveSidebarItemState] = useAtom(activeSidebarItemAtom)
   const { sidebarNavigations } = useSidebar(cocktails)
+  const router = useRouter()
+
+  useEffect(() => {
+    if (router.pathname === '/') {
+      setActiveSidebarItemState({ activeSidebarItemState: '' })
+    }
+  }, [router, setActiveSidebarItemState])
   return (
     <Drawer
       variant='permanent'
