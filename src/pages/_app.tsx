@@ -6,8 +6,6 @@ import { CacheProvider, EmotionCache } from '@emotion/react'
 import theme from 'src/lib/theme'
 import createEmotionCache from 'src/lib/createEmotionCache'
 import { MainLayout } from 'src/components/layouts/MainLayout/MainLayout'
-import { Provider } from 'react-redux'
-import { store } from 'src/stores/store'
 import { Provider as JotaiProvider } from 'jotai'
 
 const clientSideEmotionCache = createEmotionCache()
@@ -23,14 +21,12 @@ function MyApp(props: MyAppProps) {
         <meta name='viewport' content='initial-scale=1, width=device-width' />
       </Head>
       <JotaiProvider>
-        <Provider store={store}>
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <MainLayout>
-              <Component {...pageProps} />
-            </MainLayout>
-          </ThemeProvider>
-        </Provider>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <MainLayout>
+            <Component {...pageProps} />
+          </MainLayout>
+        </ThemeProvider>
       </JotaiProvider>
     </CacheProvider>
   )

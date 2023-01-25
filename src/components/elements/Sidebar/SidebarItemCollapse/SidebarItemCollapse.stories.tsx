@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { SidebarItemCollapse } from 'src/components/elements/Sidebar/SidebarItemCollapse/SidebarItemCollapse'
-import { appRoutes } from 'src/config/routes/appRoutes'
 import { SidebarNavigationsType } from 'src/config/routes/routeType'
 import { theme } from 'src/config/theme'
 
