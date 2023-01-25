@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/SidebarItem'
-import { SidebarNavigationsType } from 'src/config/routes/routeType'
 import { theme } from 'src/config/theme'
 
 export default {

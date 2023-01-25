@@ -2,11 +2,11 @@ import { memo, useCallback } from 'react'
 import { ListItemButton, ListItemIcon, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import { colorConfigs } from 'src/config/color'
-import { SidebarNavigationsType } from 'src/config/routes/routeType'
 import LocalBarOutlinedIcon from '@mui/icons-material/LocalBarOutlined'
 import { pagesPath } from 'src/lib/$path'
 import { useAtom } from 'jotai'
 import { activeSidebarItemAtom } from 'src/stores/atom'
+import { SidebarNavigationsType } from 'src/domain/sidebar/sidebar'
 type Props = {
   item: SidebarNavigationsType
 }

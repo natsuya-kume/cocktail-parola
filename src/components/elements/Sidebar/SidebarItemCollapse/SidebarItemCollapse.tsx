@@ -8,13 +8,13 @@ import {
 } from '@mui/material'
 import { memo, useEffect, useMemo, useState } from 'react'
 import { colorConfigs } from 'src/config/color'
-import { SidebarNavigationsType } from 'src/config/routes/routeType'
 import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined'
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined'
 import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/SidebarItem'
 import LocalBarOutlinedIcon from '@mui/icons-material/LocalBarOutlined'
 import { activeSidebarItemAtom } from 'src/stores/atom'
 import { useAtomValue } from 'jotai'
+import { SidebarNavigationsType } from 'src/domain/sidebar/sidebar'
 
 type Props = {
   item: SidebarNavigationsType

@@ -1,5 +1,12 @@
-import { SidebarNavigationsType } from 'src/config/routes/routeType'
 import { CocktailsType } from 'src/domain/cocktails/types/cocktail'
+export type SidebarNavigationsType = {
+  path: string
+  state: string
+  sidebarProps?: {
+    displayText: string
+  }
+  child?: SidebarNavigationsType[]
+}
 
 export type Sidebar = Readonly<{
   path: string

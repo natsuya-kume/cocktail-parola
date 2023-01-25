@@ -1,7 +1,7 @@
 import { atom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
-import { SidebarNavigationsType } from 'src/config/routes/routeType'
 import { CocktailsType } from 'src/domain/cocktails/types/cocktail'
+import { SidebarNavigationsType } from 'src/domain/sidebar/sidebar'
 
 export const cocktailsAtom = atomWithStorage<CocktailsType[]>('cocktails', [])
 
