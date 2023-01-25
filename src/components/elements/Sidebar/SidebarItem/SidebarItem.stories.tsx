@@ -9,9 +9,17 @@ export default {
 } as ComponentMeta<typeof SidebarItem>
 
 export const Default: ComponentStory<typeof SidebarItem> = () => {
+  const sidebarNavigations = {
+    path: 'kir',
+    state: 'kir',
+    sidebarProps: {
+      displayText: 'キール',
+    },
+  }
+
   return (
     <div style={{ backgroundColor: theme.palette.background.default }}>
-      <SidebarItem item={appRoutes[1] as SidebarNavigationsType} />
+      <SidebarItem item={sidebarNavigations} />
     </div>
   )
 }
