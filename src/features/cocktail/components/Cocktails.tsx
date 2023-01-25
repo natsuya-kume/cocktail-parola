@@ -18,6 +18,7 @@ export const Cocktails = memo(() => {
             gap: 10,
             marginTop: '10px',
           }}
+          key={cocktail.slug}
         >
           <Image
             src={cocktail.image.url}
