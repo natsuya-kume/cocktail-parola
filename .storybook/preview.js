@@ -1,6 +1,11 @@
 import { ThemeProvider } from '@mui/material'
-import { theme } from '../src/config/theme'
 import { RouterContext } from 'next/dist/shared/lib/router-context'
+import * as nextImage from 'next/image'
+import { theme } from '../src/config/theme'
+Object.defineProperty(nextImage, 'default', {
+  configurable: true,
+  value: (props) => <img {...props} />,
+})
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
