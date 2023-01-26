@@ -1,12 +1,12 @@
-import Head from 'next/head'
-import type { AppProps } from 'next/app'
-import { ThemeProvider } from '@mui/material/styles'
-import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider, EmotionCache } from '@emotion/react'
-import theme from 'src/lib/theme'
-import createEmotionCache from 'src/lib/createEmotionCache'
-import { MainLayout } from 'src/components/layouts/MainLayout/MainLayout'
+import CssBaseline from '@mui/material/CssBaseline'
+import { ThemeProvider } from '@mui/material/styles'
 import { Provider as JotaiProvider } from 'jotai'
+import type { AppProps } from 'next/app'
+import Head from 'next/head'
+import { MainLayout } from 'src/components/layouts/MainLayout/MainLayout'
+import createEmotionCache from 'src/lib/createEmotionCache'
+import theme from 'src/lib/theme'
 
 const clientSideEmotionCache = createEmotionCache()
 interface MyAppProps extends AppProps {

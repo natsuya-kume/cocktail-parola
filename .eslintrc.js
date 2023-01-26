@@ -1,21 +1,19 @@
 module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2019,
+    source: 'module',
+  },
   extends: [
+    'eslint:recommended',
     'plugin:@next/next/recommended',
     'plugin:react/jsx-runtime',
-    'next/core-web-vitals',
-    'plugin:import/recommended',
-    'plugin:import/warnings',
     'plugin:react-hooks/recommended',
     'prettier',
+    'plugin:react-hooks/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
-  rules: {
-    'import/order': [
-      'error',
-      {
-        alphabetize: {
-          order: 'asc',
-        },
-      },
-    ],
+  env: {
+    node: true,
   },
 }

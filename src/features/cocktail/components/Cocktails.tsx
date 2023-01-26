@@ -1,4 +1,4 @@
-import { Box, Typography, CardActionArea, CardMedia, CardContent, Card } from '@mui/material'
+import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
 import { useAtom } from 'jotai'
 import { memo } from 'react'
 import { cocktailsAtom } from 'src/stores/atom'

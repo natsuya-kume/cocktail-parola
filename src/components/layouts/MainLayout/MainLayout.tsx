@@ -1,8 +1,8 @@
-import { memo, ReactNode } from 'react'
 import { Box, Toolbar } from '@mui/material'
-import { sizeConfigs } from 'src/config/size'
+import { memo, ReactNode } from 'react'
 import { Sidebar } from 'src/components/elements/Sidebar/Sidebar'
 import { Topbar } from 'src/components/elements/Topbar/Topbar'
+import { sizeConfigs } from 'src/config/size'
 import { theme } from 'src/config/theme'
 
 type Props = {

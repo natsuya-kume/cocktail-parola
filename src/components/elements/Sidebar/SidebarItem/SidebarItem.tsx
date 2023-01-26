@@ -1,12 +1,12 @@
-import { memo, useCallback } from 'react'
-import { ListItemButton, ListItemIcon, Typography } from '@mui/material'
-import { useRouter } from 'next/router'
-import { colorConfigs } from 'src/config/color'
 import LocalBarOutlinedIcon from '@mui/icons-material/LocalBarOutlined'
-import { pagesPath } from 'src/lib/$path'
+import { ListItemButton, ListItemIcon, Typography } from '@mui/material'
 import { useAtom } from 'jotai'
-import { activeSidebarItemAtom } from 'src/stores/atom'
+import { useRouter } from 'next/router'
+import { memo, useCallback } from 'react'
+import { colorConfigs } from 'src/config/color'
 import { SidebarNavigationsType } from 'src/domain/sidebar/sidebar'
+import { pagesPath } from 'src/lib/$path'
+import { activeSidebarItemAtom } from 'src/stores/atom'
 type Props = {
   item: SidebarNavigationsType
 }
@@ -20,7 +20,7 @@ export const SidebarItem = memo(({ item }: Props) => {
     }
     if (!item.path) return
     router.push(pagesPath.cocktail._slug(item.path).$url())
-  }, [item.path, item.state, router])
+  }, [item.path, item.state, router, setActiveSidebarItemState])
 
   if (!item.sidebarProps || !item.path) {
     return <></>

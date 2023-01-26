@@ -2,10 +2,9 @@ import { Box, Typography } from '@mui/material'
 import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import { getPlaiceholder } from 'plaiceholder'
-import React from 'react'
 import { theme } from 'src/config/theme'
 import { getAllSlugs, getCocktailBySlug } from 'src/domain/cocktails/api/getCocktail'
-import { SlugType, CocktailsType } from 'src/domain/cocktails/types/cocktail'
+import { CocktailsType, SlugType } from 'src/domain/cocktails/types/cocktail'
 
 type Props = {
   cocktail: CocktailsType

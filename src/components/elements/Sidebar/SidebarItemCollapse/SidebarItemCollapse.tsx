@@ -1,3 +1,6 @@
+import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined'
+import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined'
+import LocalBarOutlinedIcon from '@mui/icons-material/LocalBarOutlined'
 import {
   Collapse,
   List,
@@ -6,15 +9,12 @@ import {
   ListItemText,
   Typography,
 } from '@mui/material'
-import { memo, useEffect, useMemo, useState } from 'react'
-import { colorConfigs } from 'src/config/color'
-import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined'
-import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined'
-import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/SidebarItem'
-import LocalBarOutlinedIcon from '@mui/icons-material/LocalBarOutlined'
-import { activeSidebarItemAtom } from 'src/stores/atom'
 import { useAtomValue } from 'jotai'
+import { memo, useEffect, useState } from 'react'
+import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/SidebarItem'
+import { colorConfigs } from 'src/config/color'
 import { SidebarNavigationsType } from 'src/domain/sidebar/sidebar'
+import { activeSidebarItemAtom } from 'src/stores/atom'
 
 type Props = {
   item: SidebarNavigationsType
@@ -32,10 +32,8 @@ export const SidebarItemCollapse = memo(({ item }: Props) => {
   if (!item.sidebarProps) {
     return <></>
   }
-  const renderExpandIcon = useMemo(
-    () => (open ? <ExpandLessOutlinedIcon /> : <ExpandMoreOutlinedIcon />),
-    [open],
-  )
+  const renderExpandIcon = open ? <ExpandLessOutlinedIcon /> : <ExpandMoreOutlinedIcon />
+
   return (
     <>
       <ListItemButton
