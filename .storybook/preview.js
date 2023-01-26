@@ -1,6 +1,4 @@
 import { ThemeProvider } from '@mui/material'
-import { Provider } from 'react-redux'
-
 import { theme } from '../src/config/theme'
 import { RouterContext } from 'next/dist/shared/lib/router-context'
 

@@ -1,55 +1,49 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, CardActionArea, CardMedia, CardContent, Card } from '@mui/material'
 import { useAtom } from 'jotai'
-import Image from 'next/image'
 import { memo } from 'react'
-import { theme } from 'src/config/theme'
 import { cocktailsAtom } from 'src/stores/atom'
 
 export const Cocktails = memo(() => {
   const [cocktails] = useAtom(cocktailsAtom)
   return (
-    <>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        gap: 10,
+        marginTop: '10px',
+      }}
+    >
       {cocktails.map((cocktail) => (
         <Box
           sx={{
             display: 'flex',
-            justifyContent: 'flex-start',
-            alignItems: 'flex-start',
-            gap: 10,
-            marginTop: '10px',
+            flexDirection: 'row',
+            gap: 2,
           }}
           key={cocktail.slug}
         >
-          <Image
-            src={cocktail.image.url}
-            alt='カクテルの画像'
-            width={cocktail.image.width}
-            height={cocktail.image.height}
-            style={{ borderRadius: '6px' }}
-          />
-          <Box>
-            <Box
-              sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: 1 }}
-            >
-              <Typography variant='h4' sx={{ color: theme.palette.text.primary }}>
-                {cocktail.name}
-              </Typography>
-              <Typography variant='h5' sx={{ color: theme.palette.text.secondary }}>
-                {cocktail.parola}
-              </Typography>
-            </Box>
-            <Typography variant='h6' sx={{ color: theme.palette.text.primary, mt: 3 }}>
-              {cocktail.description}
-            </Typography>
-            <Typography variant='h6' sx={{ color: theme.palette.text.primary, mt: 5 }}>
-              作り方:{cocktail.howToMake}
-            </Typography>
-            <Typography variant='h6' sx={{ color: theme.palette.text.primary }}>
-              タイプ:{cocktail.cocktailType}
-            </Typography>
-          </Box>
+          <Card sx={{ maxWidth: 300 }}>
+            <CardActionArea>
+              <CardMedia
+                component='img'
+                height='350'
+                image={cocktail.image.url}
+                alt='green iguana'
+              />
+              <CardContent>
+                <Typography gutterBottom variant='h5' component='div'>
+                  {cocktail.name}
+                </Typography>
+                <Typography variant='body2' color='text.secondary'>
+                  {cocktail.description}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
         </Box>
       ))}
-    </>
+    </Box>
   )
 })
