@@ -35,7 +35,7 @@ export const MainLayout = memo(({ children }: Props) => {
         }}
       >
         <Toolbar />
-        <Box sx={{ pt: 5, pl: 3 }}>{children}</Box>
+        <Box sx={{ pt: 5, pl: 3, pr: 3 }}>{children}</Box>
         <Footer />
       </Box>
     </Box>
