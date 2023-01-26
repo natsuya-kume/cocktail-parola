@@ -5,9 +5,9 @@ import { Provider as JotaiProvider } from 'jotai'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { MainLayout } from 'src/components/layouts/MainLayout/MainLayout'
+import { theme } from 'src/config/theme'
 import createEmotionCache from 'src/lib/createEmotionCache'
-import theme from 'src/lib/theme'
-
+import 'typeface-cormorant'
 const clientSideEmotionCache = createEmotionCache()
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache
