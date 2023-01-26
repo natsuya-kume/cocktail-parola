@@ -1,5 +1,6 @@
 import { Box, Toolbar } from '@mui/material'
 import { memo, ReactNode } from 'react'
+import { Footer } from 'src/components/elements/Footer/Footer'
 import { Sidebar } from 'src/components/elements/Sidebar/Sidebar'
 import { Topbar } from 'src/components/elements/Topbar/Topbar'
 import { sizeConfigs } from 'src/config/size'
@@ -26,14 +27,16 @@ export const MainLayout = memo(({ children }: Props) => {
         component='main'
         sx={{
           flexGrow: 1,
-          p: 3,
           width: `calc(100% - ${sizeConfigs.sidebar.width})`,
           minHeight: '100vh',
           backgroundColor: theme.palette.background.paper,
+          position: 'relative',
+          paddingBottom: '150px',
         }}
       >
         <Toolbar />
-        {children}
+        <Box sx={{ pt: 5, pl: 3 }}>{children}</Box>
+        <Footer />
       </Box>
     </Box>
   )

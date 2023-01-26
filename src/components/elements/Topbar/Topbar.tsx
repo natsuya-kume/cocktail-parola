@@ -2,7 +2,6 @@ import { AppBar, Toolbar, Typography } from '@mui/material'
 import { memo } from 'react'
 import { colorConfigs } from 'src/config/color'
 import { sizeConfigs } from 'src/config/size'
-import { theme } from 'src/config/theme'
 
 type Props = {
   hasSidebar?: boolean
@@ -21,7 +20,7 @@ export const Topbar = memo(({ hasSidebar = true }: Props) => {
       }}
     >
       <Toolbar>
-        <Typography variant='h6' sx={{ color: theme.palette.text.primary }}>
+        <Typography variant='h5' sx={{ color: colorConfigs.text.primary, fontWeight: 700 }}>
           Cocktail Parola
         </Typography>
       </Toolbar>
