@@ -16,7 +16,6 @@ export const Cocktail = memo(({ cocktail }: Props) => {
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
         gap: 10,
-        marginTop: '10px',
       }}
     >
       <Image

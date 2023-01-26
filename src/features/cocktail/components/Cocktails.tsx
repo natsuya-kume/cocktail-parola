@@ -13,8 +13,7 @@ export const Cocktails = memo(() => {
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        gap: 10,
-        marginTop: '10px',
+        gap: 8,
       }}
     >
       {cocktails.map((cocktail) => (
@@ -22,7 +21,7 @@ export const Cocktails = memo(() => {
           sx={{
             display: 'flex',
             flexDirection: 'row',
-            gap: 2,
+            gap: 1,
           }}
           key={cocktail.slug}
         >
