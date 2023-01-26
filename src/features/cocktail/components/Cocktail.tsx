@@ -13,8 +13,6 @@ export const Cocktail = memo(({ cocktail }: Props) => {
     <Box
       sx={{
         display: 'flex',
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start',
         gap: 10,
       }}
     >
@@ -25,8 +23,8 @@ export const Cocktail = memo(({ cocktail }: Props) => {
         height={cocktail.image.height}
         style={{ borderRadius: '6px' }}
       />
-      <Box>
-        <Box sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: 1 }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <Typography variant='h4' sx={{ color: theme.palette.text.primary }}>
             {cocktail.name}
           </Typography>
@@ -37,12 +35,14 @@ export const Cocktail = memo(({ cocktail }: Props) => {
         <Typography variant='h6' sx={{ color: theme.palette.text.primary, mt: 3 }}>
           {cocktail.description}
         </Typography>
-        <Typography variant='h6' sx={{ color: theme.palette.text.primary, mt: 5 }}>
-          作り方:{cocktail.howToMake}
-        </Typography>
-        <Typography variant='h6' sx={{ color: theme.palette.text.primary }}>
-          タイプ:{cocktail.cocktailType}
-        </Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, justifyContent: 'flex-end' }}>
+          <Typography variant='h6' sx={{ color: theme.palette.text.primary }}>
+            作り方:{cocktail.howToMake}
+          </Typography>
+          <Typography variant='h6' sx={{ color: theme.palette.text.primary }}>
+            タイプ:{cocktail.cocktailType}
+          </Typography>
+        </Box>
       </Box>
     </Box>
   )
