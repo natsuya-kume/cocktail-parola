@@ -1,12 +1,27 @@
 import { Avatar, Drawer, List, Stack, Toolbar } from '@mui/material'
-import { colorConfigs } from 'src/config/color'
-import { sizeConfigs } from 'src/config/size'
-import { appRoutes } from 'src/config/routes/appRoutes'
+import { useAtomValue, useSetAtom } from 'jotai'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { memo, useEffect } from 'react'
 import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/SidebarItem'
 import { SidebarItemCollapse } from 'src/components/elements/Sidebar/SidebarItemCollapse/SidebarItemCollapse'
-import { memo } from 'react'
+import { useSidebar } from 'src/components/elements/Sidebar/useSidebar'
+import { colorConfigs } from 'src/config/color'
+import { sizeConfigs } from 'src/config/size'
 import { theme } from 'src/config/theme'
+import { activeSidebarItemAtom, cocktailsAtom } from 'src/stores/atom'
+
 export const Sidebar = memo(() => {
+  const cocktails = useAtomValue(cocktailsAtom)
+  const setActiveSidebarItemState = useSetAtom(activeSidebarItemAtom)
+  const { sidebarNavigations } = useSidebar(cocktails)
+  const router = useRouter()
+
+  useEffect(() => {
+    if (router.pathname === '/') {
+      setActiveSidebarItemState({ activeSidebarItemState: '' })
+    }
+  }, [router, setActiveSidebarItemState])
   return (
     <Drawer
       variant='permanent'
@@ -26,13 +41,15 @@ export const Sidebar = memo(() => {
       <List disablePadding>
         <Toolbar sx={{ marginBottom: '20px' }}>
           <Stack sx={{ width: '100%' }} direction='row' justifyContent='center'>
-            <Avatar
-              sx={{ backgroundColor: theme.palette.background.default }}
-              src='/images/cocktail.jpeg'
-            />
+            <Link href='/'>
+              <Avatar
+                sx={{ backgroundColor: theme.palette.background.default }}
+                src='/images/cocktail.jpeg'
+              />
+            </Link>
           </Stack>
         </Toolbar>
-        {appRoutes.map((route, index) =>
+        {sidebarNavigations.map((route, index) =>
           route.sidebarProps ? (
             route.child ? (
               <SidebarItemCollapse item={route} key={index} />

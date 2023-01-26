@@ -1,26 +1,26 @@
-import { memo, useCallback } from 'react'
+import LocalBarOutlinedIcon from '@mui/icons-material/LocalBarOutlined'
 import { ListItemButton, ListItemIcon, Typography } from '@mui/material'
+import { useAtom } from 'jotai'
 import { useRouter } from 'next/router'
-import { useSelector, useDispatch } from 'react-redux'
+import { memo, useCallback } from 'react'
 import { colorConfigs } from 'src/config/color'
-import { RouteType } from 'src/config/routes/routeType'
-import { RootState } from 'src/stores/store'
-import { setSidebarItemState } from 'src/stores/features/sidebar/sidebarItemStateSlice'
+import { SidebarNavigationsType } from 'src/domain/sidebar/sidebar'
+import { pagesPath } from 'src/lib/$path'
+import { activeSidebarItemAtom } from 'src/stores/atom'
 type Props = {
-  item: RouteType
+  item: SidebarNavigationsType
 }
 
 export const SidebarItem = memo(({ item }: Props) => {
-  const dispatch = useDispatch()
-  const { sidebarItemState } = useSelector((state: RootState) => state.sidebarItemState)
+  const [sidebarItemState, setActiveSidebarItemState] = useAtom(activeSidebarItemAtom)
   const router = useRouter()
   const onClickSidebarItem = useCallback(() => {
     if (item.state) {
-      dispatch(setSidebarItemState(item.state))
+      setActiveSidebarItemState({ activeSidebarItemState: item.state })
     }
     if (!item.path) return
-    router.push(item.path)
-  }, [dispatch, item.path, item.state, router])
+    router.push(pagesPath.cocktail._slug(item.path).$url())
+  }, [item.path, item.state, router, setActiveSidebarItemState])
 
   if (!item.sidebarProps || !item.path) {
     return <></>
@@ -33,7 +33,10 @@ export const SidebarItem = memo(({ item }: Props) => {
         '&: hover': {
           backgroundColor: colorConfigs.sidebar.hoverBg,
         },
-        backgroundColor: sidebarItemState === item.state ? colorConfigs.sidebar.activeBg : 'unset',
+        backgroundColor:
+          sidebarItemState.activeSidebarItemState === item.state
+            ? colorConfigs.sidebar.activeBg
+            : 'unset',
         paddingY: '12px',
         paddingX: '24px',
       }}
@@ -43,7 +46,8 @@ export const SidebarItem = memo(({ item }: Props) => {
           color: colorConfigs.sidebar.fontColor,
         }}
       >
-        {item.sidebarProps.icon}
+        {/* {item.sidebarProps.icon} */}
+        <LocalBarOutlinedIcon />
       </ListItemIcon>
       <Typography
         sx={{

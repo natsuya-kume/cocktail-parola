@@ -1,3 +1,6 @@
+import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined'
+import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined'
+import LocalBarOutlinedIcon from '@mui/icons-material/LocalBarOutlined'
 import {
   Collapse,
   List,
@@ -6,24 +9,22 @@ import {
   ListItemText,
   Typography,
 } from '@mui/material'
-import { memo, useEffect, useMemo, useState } from 'react'
-import { colorConfigs } from 'src/config/color'
-import { RouteType } from 'src/config/routes/routeType'
-import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined'
-import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined'
+import { useAtomValue } from 'jotai'
+import { memo, useEffect, useState } from 'react'
 import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/SidebarItem'
-import { useSelector } from 'react-redux'
-import { RootState } from 'src/stores/store'
+import { colorConfigs } from 'src/config/color'
+import { SidebarNavigationsType } from 'src/domain/sidebar/sidebar'
+import { activeSidebarItemAtom } from 'src/stores/atom'
+
 type Props = {
-  item: RouteType
+  item: SidebarNavigationsType
 }
 
 export const SidebarItemCollapse = memo(({ item }: Props) => {
   const [open, setOpen] = useState(false)
-  const { sidebarItemState } = useSelector((state: RootState) => state.sidebarItemState)
-
+  const sidebarItemState = useAtomValue(activeSidebarItemAtom)
   useEffect(() => {
-    if (sidebarItemState.includes(item.state)) {
+    if (sidebarItemState.activeSidebarItemState.includes(item.state)) {
       setOpen(true)
     }
   }, [sidebarItemState, item])
@@ -31,10 +32,8 @@ export const SidebarItemCollapse = memo(({ item }: Props) => {
   if (!item.sidebarProps) {
     return <></>
   }
-  const renderExpandIcon = useMemo(
-    () => (open ? <ExpandLessOutlinedIcon /> : <ExpandMoreOutlinedIcon />),
-    [open],
-  )
+  const renderExpandIcon = open ? <ExpandLessOutlinedIcon /> : <ExpandMoreOutlinedIcon />
+
   return (
     <>
       <ListItemButton
@@ -52,7 +51,8 @@ export const SidebarItemCollapse = memo(({ item }: Props) => {
             color: colorConfigs.sidebar.fontColor,
           }}
         >
-          {item.sidebarProps.icon}
+          {/* {item.sidebarProps.icon} */}
+          <LocalBarOutlinedIcon />
         </ListItemIcon>
         <ListItemText
           disableTypography

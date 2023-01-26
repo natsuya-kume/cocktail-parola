@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/SidebarItem'
-import { appRoutes } from 'src/config/routes/appRoutes'
 import { theme } from 'src/config/theme'
 
 export default {
@@ -9,9 +8,17 @@ export default {
 } as ComponentMeta<typeof SidebarItem>
 
 export const Default: ComponentStory<typeof SidebarItem> = () => {
+  const sidebarNavigations = {
+    path: 'kir',
+    state: 'kir',
+    sidebarProps: {
+      displayText: 'キール',
+    },
+  }
+
   return (
     <div style={{ backgroundColor: theme.palette.background.default }}>
-      <SidebarItem item={appRoutes[1]} />
+      <SidebarItem item={sidebarNavigations} />
     </div>
   )
 }
