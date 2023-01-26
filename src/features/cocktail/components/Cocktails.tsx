@@ -1,18 +1,27 @@
 import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
 import { useAtom } from 'jotai'
-import { memo } from 'react'
+import { useRouter } from 'next/router'
+import { memo, useCallback } from 'react'
 import { theme } from 'src/config/theme'
 
 import { cocktailsAtom } from 'src/stores/atom'
 
 export const Cocktails = memo(() => {
+  const router = useRouter()
   const [cocktails] = useAtom(cocktailsAtom)
+  const onClickCocktail = useCallback(
+    (slug: string) => {
+      router.push(`/cocktail/${slug}`)
+    },
+    [router],
+  )
   return (
     <Box
       sx={{
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
+        justifyContent: 'space-evenly',
         gap: 8,
       }}
     >
@@ -25,14 +34,12 @@ export const Cocktails = memo(() => {
           }}
           key={cocktail.slug}
         >
-          <Card sx={{ maxWidth: 300, backgroundColor: theme.palette.background.default }}>
+          <Card
+            sx={{ width: 300, backgroundColor: theme.palette.background.default }}
+            onClick={() => onClickCocktail(cocktail.slug)}
+          >
             <CardActionArea>
-              <CardMedia
-                component='img'
-                height='350'
-                image={cocktail.image.url}
-                alt='green iguana'
-              />
+              <CardMedia component='img' height='350' image={cocktail.image.url} alt='cocktail' />
               <CardContent sx={{ backgroundColor: theme.palette.background.default }}>
                 <Typography
                   gutterBottom
@@ -46,7 +53,7 @@ export const Cocktails = memo(() => {
                   variant='body2'
                   sx={{ color: theme.palette.text.tertiary, opacity: 0.6 }}
                 >
-                  {cocktail.description}
+                  {cocktail.parola}
                 </Typography>
               </CardContent>
             </CardActionArea>
