@@ -4,7 +4,7 @@ import { SideBarNavigationsType } from 'src/domain/sideBar/sideBar'
 import { SideBarItemCollapse } from './SideBarItemCollapse'
 
 export default {
-  title: 'elements/Sidebar/SideBarItemCollapse',
+  title: 'elements/SidBar/SideBarItemCollapse',
   component: SideBarItemCollapse,
 } as ComponentMeta<typeof SideBarItemCollapse>
 

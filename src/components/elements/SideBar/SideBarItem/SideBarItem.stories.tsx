@@ -3,7 +3,7 @@ import { SideBarItem } from 'src/components/elements/SideBar/SideBarItem/SideBar
 import { theme } from 'src/config/theme'
 
 export default {
-  title: 'elements/Sidebar/SideBarItem',
+  title: 'elements/SideBar/SideBarItem',
   component: SideBarItem,
 } as ComponentMeta<typeof SideBarItem>
 
