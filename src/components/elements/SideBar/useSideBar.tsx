@@ -4,7 +4,7 @@ import { CocktailsType } from 'src/domain/cocktails/types/cocktail'
 import { SideBar } from 'src/domain/sideBar/sideBar'
 import { sideBarNavigationsAtom } from 'src/stores/atom'
 
-export const useSidebar = (cocktails: CocktailsType[]) => {
+export const useSideBar = (cocktails: CocktailsType[]) => {
   const [sideBarNavigations, setSideBarNavigations] = useAtom(sideBarNavigationsAtom)
   const sideBarNavigationsList = SideBar.getSideBarNavigationsList(cocktails)
   useEffect(() => {
