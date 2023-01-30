@@ -18,3 +18,5 @@ export const activeSideBarItemAtom = atomWithStorage<sideBarItemState>(
   'activeSideBarItem',
   initialState,
 )
+
+export const searchedCocktailsAtom = atom<CocktailsType[]>([])

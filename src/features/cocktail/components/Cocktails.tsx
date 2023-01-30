@@ -1,14 +1,16 @@
 import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
-import { useAtom } from 'jotai'
+import { useAtomValue } from 'jotai'
 import { useRouter } from 'next/router'
 import { memo, useCallback } from 'react'
 import { theme } from 'src/config/theme'
-
-import { cocktailsAtom } from 'src/stores/atom'
+import { cocktailsAtom, searchedCocktailsAtom } from 'src/stores/atom'
 
 export const Cocktails = memo(() => {
   const router = useRouter()
-  const [cocktails] = useAtom(cocktailsAtom)
+  const rawCocktails = useAtomValue(cocktailsAtom)
+  const searchedCocktails = useAtomValue(searchedCocktailsAtom)
+  const cocktails = searchedCocktails.length > 0 ? searchedCocktails : rawCocktails
+
   const onClickCocktail = useCallback(
     (slug: string) => {
       router.push(`/cocktail/${slug}`)
@@ -18,11 +20,9 @@ export const Cocktails = memo(() => {
   return (
     <Box
       sx={{
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'space-evenly',
-        gap: 8,
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, 1fr)',
+        gap: '20px',
       }}
     >
       {cocktails.map((cocktail) => (

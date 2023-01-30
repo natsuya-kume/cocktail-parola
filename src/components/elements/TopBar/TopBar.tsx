@@ -1,5 +1,6 @@
 import { AppBar, Toolbar, Typography } from '@mui/material'
-import { ChangeEvent, memo, useCallback } from 'react'
+import { memo } from 'react'
+import { SearchBar } from 'src/components/elements/SearchBar/SearchBar'
 import { colorConfigs } from 'src/config/color'
 import { sizeConfigs } from 'src/config/size'
 
@@ -8,12 +9,6 @@ type Props = {
 }
 
 export const TopBar = memo(({ hasSideBar = true }: Props) => {
-  const onChangeSearchBarValue = useCallback(
-    (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      console.log(e.target.value)
-    },
-    [],
-  )
   return (
     <AppBar
       position='fixed'
@@ -29,6 +24,7 @@ export const TopBar = memo(({ hasSideBar = true }: Props) => {
         <Typography variant='h5' sx={{ color: colorConfigs.text.primary, fontWeight: 700 }}>
           Cocktail Parola
         </Typography>
+        <SearchBar />
       </Toolbar>
     </AppBar>
   )

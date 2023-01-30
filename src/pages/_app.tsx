@@ -7,7 +7,7 @@ import Head from 'next/head'
 import { MainLayout } from 'src/components/layouts/MainLayout/MainLayout'
 import { theme } from 'src/config/theme'
 import createEmotionCache from 'src/lib/createEmotionCache'
-import 'typeface-cormorant'
+// import 'typeface-cormorant'
 const clientSideEmotionCache = createEmotionCache()
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache
