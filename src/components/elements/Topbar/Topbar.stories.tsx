@@ -1,11 +1,11 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Topbar } from 'src/components/elements/Topbar/Topbar'
+import { TopBar } from 'src/components/elements/TopBar/TopBar'
 
 export default {
-  title: 'elements/Topbar',
-  component: Topbar,
-} as ComponentMeta<typeof Topbar>
+  title: 'elements/TopBar',
+  component: TopBar,
+} as ComponentMeta<typeof TopBar>
 
-export const Default: ComponentStory<typeof Topbar> = () => {
-  return <Topbar hasSidebar={false} />
+export const Default: ComponentStory<typeof TopBar> = () => {
+  return <TopBar hasSideBar={false} />
 }
