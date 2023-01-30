@@ -11,23 +11,23 @@ import {
 } from '@mui/material'
 import { useAtomValue } from 'jotai'
 import { memo, useEffect, useState } from 'react'
-import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/SidebarItem'
+import { SideBarItem } from 'src/components/elements/SideBar/SideBarItem/SideBarItem'
 import { colorConfigs } from 'src/config/color'
-import { SidebarNavigationsType } from 'src/domain/sidebar/sidebar'
-import { activeSidebarItemAtom } from 'src/stores/atom'
+import { SideBarNavigationsType } from 'src/domain/sideBar/sideBar'
+import { activeSideBarItemAtom } from 'src/stores/atom'
 
 type Props = {
-  item: SidebarNavigationsType
+  item: SideBarNavigationsType
 }
 
-export const SidebarItemCollapse = memo(({ item }: Props) => {
+export const SideBarItemCollapse = memo(({ item }: Props) => {
   const [open, setOpen] = useState(false)
-  const sidebarItemState = useAtomValue(activeSidebarItemAtom)
+  const sideBarItemState = useAtomValue(activeSideBarItemAtom)
   useEffect(() => {
-    if (sidebarItemState.activeSidebarItemState.includes(item.state)) {
+    if (sideBarItemState.activeSideBarItemState.includes(item.state)) {
       setOpen(true)
     }
-  }, [sidebarItemState, item])
+  }, [sideBarItemState, item])
 
   if (!item.sidebarProps) {
     return <></>
@@ -73,9 +73,9 @@ export const SidebarItemCollapse = memo(({ item }: Props) => {
           {item.child?.map((route, index) =>
             route.sidebarProps ? (
               route.child ? (
-                <SidebarItemCollapse item={route} key={index} />
+                <SideBarItemCollapse item={route} key={index} />
               ) : (
-                <SidebarItem item={route} key={index} />
+                <SideBarItem item={route} key={index} />
               )
             ) : null,
           )}

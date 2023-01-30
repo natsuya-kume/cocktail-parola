@@ -1,22 +1,22 @@
 import { CocktailsType } from 'src/domain/cocktails/types/cocktail'
-export type SidebarNavigationsType = {
+export type SideBarNavigationsType = {
   path: string
   state: string
   sidebarProps?: {
     displayText: string
   }
-  child?: SidebarNavigationsType[]
+  child?: SideBarNavigationsType[]
 }
 
-export type Sidebar = Readonly<{
+export type SideBar = Readonly<{
   path: string
   state: string
   sidebarProps?: {
     displayText: string
   }
-  child?: SidebarNavigationsType[]
+  child?: SideBarNavigationsType[]
 }>
-const getSidebarNavigationsList = (list: CocktailsType[]) => {
+const getSideBarNavigationsList = (list: CocktailsType[]) => {
   return list.map((cocktail) => ({
     path: cocktail.slug,
     state: cocktail.slug,
@@ -26,6 +26,6 @@ const getSidebarNavigationsList = (list: CocktailsType[]) => {
   }))
 }
 
-export const Sidebar = {
-  getSidebarNavigationsList,
+export const SideBar = {
+  getSideBarNavigationsList,
 } as const

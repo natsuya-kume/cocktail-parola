@@ -1,7 +1,7 @@
 import { Box, Toolbar } from '@mui/material'
 import { memo, ReactNode } from 'react'
 import { Footer } from 'src/components/elements/Footer/Footer'
-import { Sidebar } from 'src/components/elements/Sidebar/Sidebar'
+import { SideBar } from 'src/components/elements/SideBar/SideBar'
 import { Topbar } from 'src/components/elements/Topbar/Topbar'
 import { sizeConfigs } from 'src/config/size'
 import { theme } from 'src/config/theme'
@@ -21,7 +21,7 @@ export const MainLayout = memo(({ children }: Props) => {
           flexShrink: 0,
         }}
       >
-        <Sidebar />
+        <SideBar />
       </Box>
       <Box
         component='main'

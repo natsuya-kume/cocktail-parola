@@ -1,17 +1,17 @@
 import { useAtom } from 'jotai'
 import { useEffect } from 'react'
 import { CocktailsType } from 'src/domain/cocktails/types/cocktail'
-import { Sidebar } from 'src/domain/sidebar/sidebar'
-import { sidebarNavigationsAtom } from 'src/stores/atom'
+import { SideBar } from 'src/domain/sideBar/sideBar'
+import { sideBarNavigationsAtom } from 'src/stores/atom'
 
 export const useSidebar = (cocktails: CocktailsType[]) => {
-  const [sidebarNavigations, setSidebarNavigations] = useAtom(sidebarNavigationsAtom)
-  const sidebarNavigationsList = Sidebar.getSidebarNavigationsList(cocktails)
+  const [sideBarNavigations, setSideBarNavigations] = useAtom(sideBarNavigationsAtom)
+  const sideBarNavigationsList = SideBar.getSideBarNavigationsList(cocktails)
   useEffect(() => {
-    if (sidebarNavigations.length) return
+    if (sideBarNavigations.length) return
     console.log('jh')
-    setSidebarNavigations(sidebarNavigationsList)
-  }, [setSidebarNavigations, sidebarNavigationsList, sidebarNavigations.length])
+    setSideBarNavigations(sideBarNavigationsList)
+  }, [setSideBarNavigations, sideBarNavigationsList, sideBarNavigations.length])
 
-  return { sidebarNavigations }
+  return { sideBarNavigations }
 }

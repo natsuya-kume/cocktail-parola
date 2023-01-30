@@ -4,23 +4,23 @@ import { useAtom } from 'jotai'
 import { useRouter } from 'next/router'
 import { memo, useCallback } from 'react'
 import { colorConfigs } from 'src/config/color'
-import { SidebarNavigationsType } from 'src/domain/sidebar/sidebar'
+import { SideBarNavigationsType } from 'src/domain/sideBar/sideBar'
 import { pagesPath } from 'src/lib/$path'
-import { activeSidebarItemAtom } from 'src/stores/atom'
+import { activeSideBarItemAtom } from 'src/stores/atom'
 type Props = {
-  item: SidebarNavigationsType
+  item: SideBarNavigationsType
 }
 
-export const SidebarItem = memo(({ item }: Props) => {
-  const [sidebarItemState, setActiveSidebarItemState] = useAtom(activeSidebarItemAtom)
+export const SideBarItem = memo(({ item }: Props) => {
+  const [sideBarItemState, setActiveSideBarItemState] = useAtom(activeSideBarItemAtom)
   const router = useRouter()
-  const onClickSidebarItem = useCallback(() => {
+  const onClickSideBarItem = useCallback(() => {
     if (item.state) {
-      setActiveSidebarItemState({ activeSidebarItemState: item.state })
+      setActiveSideBarItemState({ activeSideBarItemState: item.state })
     }
     if (!item.path) return
     router.push(pagesPath.cocktail._slug(item.path).$url())
-  }, [item.path, item.state, router, setActiveSidebarItemState])
+  }, [item.path, item.state, router, setActiveSideBarItemState])
 
   if (!item.sidebarProps || !item.path) {
     return <></>
@@ -28,13 +28,13 @@ export const SidebarItem = memo(({ item }: Props) => {
 
   return (
     <ListItemButton
-      onClick={onClickSidebarItem}
+      onClick={onClickSideBarItem}
       sx={{
         '&: hover': {
           backgroundColor: colorConfigs.sidebar.hoverBg,
         },
         backgroundColor:
-          sidebarItemState.activeSidebarItemState === item.state
+          sideBarItemState.activeSideBarItemState === item.state
             ? colorConfigs.sidebar.activeBg
             : 'unset',
         paddingY: '12px',

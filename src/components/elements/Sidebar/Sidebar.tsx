@@ -3,25 +3,25 @@ import { useAtomValue, useSetAtom } from 'jotai'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { memo, useEffect } from 'react'
-import { SidebarItem } from 'src/components/elements/Sidebar/SidebarItem/SidebarItem'
-import { SidebarItemCollapse } from 'src/components/elements/Sidebar/SidebarItemCollapse/SidebarItemCollapse'
-import { useSidebar } from 'src/components/elements/Sidebar/useSidebar'
+import { SideBarItem } from 'src/components/elements/SideBar/SideBarItem/SideBarItem'
+import { SideBarItemCollapse } from 'src/components/elements/SideBar/SideBarItemCollapse/SidebarItemCollapse'
+import { useSidebar } from 'src/components/elements/SideBar/useSidebar'
 import { colorConfigs } from 'src/config/color'
 import { sizeConfigs } from 'src/config/size'
 import { theme } from 'src/config/theme'
-import { activeSidebarItemAtom, cocktailsAtom } from 'src/stores/atom'
+import { activeSideBarItemAtom, cocktailsAtom } from 'src/stores/atom'
 
-export const Sidebar = memo(() => {
+export const SideBar = memo(() => {
   const cocktails = useAtomValue(cocktailsAtom)
-  const setActiveSidebarItemState = useSetAtom(activeSidebarItemAtom)
-  const { sidebarNavigations } = useSidebar(cocktails)
+  const setActiveSideBarItemState = useSetAtom(activeSideBarItemAtom)
+  const { sideBarNavigations } = useSidebar(cocktails)
   const router = useRouter()
 
   useEffect(() => {
     if (router.pathname === '/') {
-      setActiveSidebarItemState({ activeSidebarItemState: '' })
+      setActiveSideBarItemState({ activeSideBarItemState: '' })
     }
-  }, [router, setActiveSidebarItemState])
+  }, [router, setActiveSideBarItemState])
   return (
     <Drawer
       variant='permanent'
@@ -49,12 +49,12 @@ export const Sidebar = memo(() => {
             </Link>
           </Stack>
         </Toolbar>
-        {sidebarNavigations.map((route, index) =>
+        {sideBarNavigations.map((route, index) =>
           route.sidebarProps ? (
             route.child ? (
-              <SidebarItemCollapse item={route} key={index} />
+              <SideBarItemCollapse item={route} key={index} />
             ) : (
-              <SidebarItem item={route} key={index} />
+              <SideBarItem item={route} key={index} />
             )
           ) : null,
         )}
