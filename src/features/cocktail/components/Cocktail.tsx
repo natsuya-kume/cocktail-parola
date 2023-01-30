@@ -23,7 +23,7 @@ export const Cocktail = memo(({ cocktail }: Props) => {
         height={cocktail.image.height}
         style={{ borderRadius: '6px' }}
       />
-      <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <Typography variant='h4' sx={{ color: theme.palette.text.primary }}>
             {cocktail.name}

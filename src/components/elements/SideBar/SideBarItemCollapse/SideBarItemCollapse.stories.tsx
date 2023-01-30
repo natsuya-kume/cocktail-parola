@@ -1,15 +1,15 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { SidebarItemCollapse } from 'src/components/elements/Sidebar/SidebarItemCollapse/SidebarItemCollapse'
 import { theme } from 'src/config/theme'
-import { SidebarNavigationsType } from 'src/domain/sidebar/sidebar'
+import { SideBarNavigationsType } from 'src/domain/sideBar/sideBar'
+import { SideBarItemCollapse } from './SideBarItemCollapse'
 
 export default {
-  title: 'elements/Sidebar/SidebarItemCollapse',
-  component: SidebarItemCollapse,
-} as ComponentMeta<typeof SidebarItemCollapse>
+  title: 'elements/SidBar/SideBarItemCollapse',
+  component: SideBarItemCollapse,
+} as ComponentMeta<typeof SideBarItemCollapse>
 
-export const Default: ComponentStory<typeof SidebarItemCollapse> = () => {
-  const sidebarNavigations: SidebarNavigationsType = {
+export const Default: ComponentStory<typeof SideBarItemCollapse> = () => {
+  const sideBarNavigations: SideBarNavigationsType = {
     path: 'liqueur',
     state: 'liqueur',
     sidebarProps: {
@@ -34,7 +34,7 @@ export const Default: ComponentStory<typeof SidebarItemCollapse> = () => {
   }
   return (
     <div style={{ backgroundColor: theme.palette.background.default }}>
-      <SidebarItemCollapse item={sidebarNavigations} />
+      <SideBarItemCollapse item={sideBarNavigations} />
     </div>
   )
 }

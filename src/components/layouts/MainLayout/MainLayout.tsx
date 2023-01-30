@@ -1,8 +1,8 @@
 import { Box, Toolbar } from '@mui/material'
 import { memo, ReactNode } from 'react'
 import { Footer } from 'src/components/elements/Footer/Footer'
-import { Sidebar } from 'src/components/elements/Sidebar/Sidebar'
-import { Topbar } from 'src/components/elements/Topbar/Topbar'
+import { SideBar } from 'src/components/elements/SideBar/SideBar'
+import { TopBar } from 'src/components/elements/TopBar/TopBar'
 import { sizeConfigs } from 'src/config/size'
 import { theme } from 'src/config/theme'
 
@@ -13,7 +13,7 @@ type Props = {
 export const MainLayout = memo(({ children }: Props) => {
   return (
     <Box sx={{ display: 'flex' }}>
-      <Topbar />
+      <TopBar />
       <Box
         component='nav'
         sx={{
@@ -21,7 +21,7 @@ export const MainLayout = memo(({ children }: Props) => {
           flexShrink: 0,
         }}
       >
-        <Sidebar />
+        <SideBar />
       </Box>
       <Box
         component='main'

@@ -1,20 +1,22 @@
 import { atom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 import { CocktailsType } from 'src/domain/cocktails/types/cocktail'
-import { SidebarNavigationsType } from 'src/domain/sidebar/sidebar'
+import { SideBarNavigationsType } from 'src/domain/sideBar/sideBar'
 
 export const cocktailsAtom = atomWithStorage<CocktailsType[]>('cocktails', [])
 
-export const sidebarNavigationsAtom = atom<SidebarNavigationsType[]>([])
+export const sideBarNavigationsAtom = atom<SideBarNavigationsType[]>([])
 
-type sidebarItemState = {
-  activeSidebarItemState: string
+type sideBarItemState = {
+  activeSideBarItemState: string
 }
-const initialState: sidebarItemState = {
-  activeSidebarItemState: '',
+const initialState: sideBarItemState = {
+  activeSideBarItemState: '',
 }
 
-export const activeSidebarItemAtom = atomWithStorage<sidebarItemState>(
-  'activeSidebarItem',
+export const activeSideBarItemAtom = atomWithStorage<sideBarItemState>(
+  'activeSideBarItem',
   initialState,
 )
+
+export const searchedCocktailsAtom = atom<CocktailsType[]>([])
