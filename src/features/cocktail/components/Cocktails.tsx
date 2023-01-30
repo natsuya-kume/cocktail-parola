@@ -2,6 +2,7 @@ import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@
 import { useAtomValue } from 'jotai'
 import { useRouter } from 'next/router'
 import { memo, useCallback } from 'react'
+import { colorConfigs } from 'src/config/color'
 import { theme } from 'src/config/theme'
 import { cocktailsAtom, searchedCocktailsAtom } from 'src/stores/atom'
 
@@ -45,13 +46,13 @@ export const Cocktails = memo(() => {
                   gutterBottom
                   variant='h5'
                   component='div'
-                  sx={{ color: theme.palette.text.primary, fontWeight: 700 }}
+                  sx={{ color: colorConfigs.text.tertiary, fontWeight: 700 }}
                 >
                   {cocktail.name}
                 </Typography>
                 <Typography
                   variant='body2'
-                  sx={{ color: theme.palette.text.tertiary, opacity: 0.6 }}
+                  sx={{ color: colorConfigs.text.tertiary, opacity: 0.6 }}
                 >
                   {cocktail.parola}
                 </Typography>
