@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { memo, useEffect } from 'react'
 import { SideBarItem } from 'src/components/elements/SideBar/SideBarItem/SideBarItem'
-import { SideBarItemCollapse } from 'src/components/elements/SideBar/SideBarItemCollapse/SidebarItemCollapse'
-import { useSidebar } from 'src/components/elements/SideBar/useSidebar'
+import { SideBarItemCollapse } from 'src/components/elements/SideBar/SideBarItemCollapse/SideBarItemCollapse'
+import { useSideBar } from 'src/components/elements/SideBar/useSideBar'
 import { colorConfigs } from 'src/config/color'
 import { sizeConfigs } from 'src/config/size'
 import { theme } from 'src/config/theme'
@@ -14,7 +14,7 @@ import { activeSideBarItemAtom, cocktailsAtom } from 'src/stores/atom'
 export const SideBar = memo(() => {
   const cocktails = useAtomValue(cocktailsAtom)
   const setActiveSideBarItemState = useSetAtom(activeSideBarItemAtom)
-  const { sideBarNavigations } = useSidebar(cocktails)
+  const { sideBarNavigations } = useSideBar(cocktails)
   const router = useRouter()
 
   useEffect(() => {

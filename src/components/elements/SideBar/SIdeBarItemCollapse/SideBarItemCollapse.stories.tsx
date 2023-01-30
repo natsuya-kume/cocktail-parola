@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { theme } from 'src/config/theme'
 import { SideBarNavigationsType } from 'src/domain/sideBar/sideBar'
-import { SideBarItemCollapse } from './SidebarItemCollapse'
+import { SideBarItemCollapse } from './SideBarItemCollapse'
 
 export default {
   title: 'elements/Sidebar/SideBarItemCollapse',
