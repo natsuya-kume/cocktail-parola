@@ -1,5 +1,7 @@
 # Cocktail Parola
 
+飲んだカクテルとそのカクテル言葉を記録するアプリ
+
 ## 使用技術
 
 - [Next.js](https://nextjs.org/learn)
