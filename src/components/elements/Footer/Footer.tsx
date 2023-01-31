@@ -1,20 +1,46 @@
 import { Box, Typography } from '@mui/material'
+import { useSetAtom } from 'jotai'
 import Link from 'next/link'
-import { memo } from 'react'
+import { memo, useCallback } from 'react'
 import styles from 'src/components/elements/Footer/styles.module.css'
 import { colorConfigs } from 'src/config/color'
 import { theme } from 'src/config/theme'
+import { pagesPath } from 'src/lib/$path'
+import { activeSideBarItemAtom } from 'src/stores/atom'
 export const Footer = memo(() => {
+  const setActiveSideBarItemState = useSetAtom(activeSideBarItemAtom)
+  const onClickAboutText = useCallback(
+    () => setActiveSideBarItemState({ activeSideBarItemState: '' }),
+    [setActiveSideBarItemState],
+  )
   return (
     <Box
       sx={{
-        padding: '30px 0px',
+        padding: '30px 20px',
         backgroundColor: theme.palette.background.default,
         position: 'absolute',
         bottom: 0,
         width: '100%',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
       }}
     >
+      <Link href={pagesPath.about.$url()} onClick={onClickAboutText}>
+        <Typography
+          align='center'
+          variant='h6'
+          sx={{
+            color: colorConfigs.text.primary,
+            display: 'inline-block',
+            '&:hover': {
+              opacity: 0.8,
+            },
+          }}
+        >
+          このサイトについて
+        </Typography>
+      </Link>
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '3px' }}>
         <Typography
           align='center'

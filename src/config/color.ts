@@ -18,5 +18,8 @@ export const colorConfigs = {
     quaternary: '#48bd67',
     quinary: '#ff79c6',
   },
+  bg: {
+    primary: '#282a36',
+  },
   mainBg: colors.grey['100'],
 }

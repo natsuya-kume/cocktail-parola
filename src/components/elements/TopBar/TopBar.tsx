@@ -1,5 +1,6 @@
 import { AppBar, Toolbar, Typography } from '@mui/material'
-import { memo } from 'react'
+import { useRouter } from 'next/router'
+import { memo, useMemo } from 'react'
 import { SearchBar } from 'src/components/elements/SearchBar/SearchBar'
 import { colorConfigs } from 'src/config/color'
 import { sizeConfigs } from 'src/config/size'
@@ -9,6 +10,11 @@ type Props = {
 }
 
 export const TopBar = memo(({ hasSideBar = true }: Props) => {
+  const router = useRouter()
+  const renderSearchBar = useMemo(
+    () => (router.pathname === '/' ? <SearchBar /> : null),
+    [router.pathname],
+  )
   return (
     <AppBar
       position='fixed'
@@ -24,7 +30,7 @@ export const TopBar = memo(({ hasSideBar = true }: Props) => {
         <Typography variant='h5' sx={{ color: colorConfigs.text.primary, fontWeight: 700 }}>
           Cocktail Parola
         </Typography>
-        <SearchBar />
+        {renderSearchBar}
       </Toolbar>
     </AppBar>
   )
