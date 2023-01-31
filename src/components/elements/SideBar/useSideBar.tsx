@@ -9,7 +9,6 @@ export const useSideBar = (cocktails: CocktailsType[]) => {
   const sideBarNavigationsList = SideBar.getSideBarNavigationsList(cocktails)
   useEffect(() => {
     if (sideBarNavigations.length) return
-    console.log('jh')
     setSideBarNavigations(sideBarNavigationsList)
   }, [setSideBarNavigations, sideBarNavigationsList, sideBarNavigations.length])
 
