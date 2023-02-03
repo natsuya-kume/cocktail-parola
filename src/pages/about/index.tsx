@@ -18,7 +18,7 @@ export default function AboutPage() {
         ※本サイトで使用されている画像はイメージであり、実際のカクテルとは違うカクテルの写真を使用している場合があります。
         カクテルによって複数のカクテル言葉、レシピがあります。
       </Typography>
-      <Box sx={{ backgroundColor: colorConfigs.bg.primary, p: 2, mt: 3 }}>
+      <Box sx={{ backgroundColor: colorConfigs.bg.primary, p: 2, mt: 3, borderRadius: '10px' }}>
         <Typography variant='h6' sx={{ color: colorConfigs.text.quaternary }}>
           当サイトの情報を引用・転載する場合は当サイトへのリンクや引用元記載の上でお願いします。
         </Typography>
