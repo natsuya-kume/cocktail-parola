@@ -1,27 +1,16 @@
 import { Box, Chip, Typography } from '@mui/material'
 import Image from 'next/image'
-import { memo, useCallback, useState } from 'react'
-import { SimpleDialog } from 'src/components/elements/Dialog/Dialog'
+import { memo } from 'react'
 import { theme } from 'src/config/theme'
 import { CocktailsType } from 'src/domain/cocktails/types/cocktail'
+import { useCocktailDescriptionChipDialog } from './hooks/useCocktailDescriptionChipDialog'
 
 type Props = {
   cocktail: CocktailsType
 }
 
 export const Cocktail = memo(({ cocktail }: Props) => {
-  const [open, setOpen] = useState(false)
-  const [selectedValue, setSelectedValue] = useState('')
-
-  const handleClickOpen = useCallback((value: string) => {
-    setSelectedValue(value)
-    setOpen(true)
-  }, [])
-
-  const handleClose = useCallback((value: string) => {
-    setOpen(false)
-    setSelectedValue(value)
-  }, [])
+  const { Dialog, openDialog } = useCocktailDescriptionChipDialog()
   return (
     <Box
       sx={{
@@ -53,7 +42,7 @@ export const Cocktail = memo(({ cocktail }: Props) => {
             作り方:{cocktail.howToMake}
           </Typography>
           <Chip
-            onClick={() => handleClickOpen(cocktail.howToMake)}
+            onClick={() => openDialog(cocktail.howToMake)}
             label='?'
             variant='outlined'
             size='small'
@@ -68,7 +57,7 @@ export const Cocktail = memo(({ cocktail }: Props) => {
             タイプ:{cocktail.cocktailType}
           </Typography>
           <Chip
-            onClick={() => handleClickOpen(cocktail.cocktailType)}
+            onClick={() => openDialog(cocktail.cocktailType)}
             label='?'
             variant='outlined'
             size='small'
@@ -80,7 +69,7 @@ export const Cocktail = memo(({ cocktail }: Props) => {
             }}
           />
         </Box>
-        <SimpleDialog selectedValue={selectedValue} open={open} onClose={handleClose} />
+        <Dialog />
       </Box>
     </Box>
   )
