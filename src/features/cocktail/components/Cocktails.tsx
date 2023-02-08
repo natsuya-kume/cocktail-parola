@@ -18,12 +18,16 @@ export const Cocktails = memo(() => {
     },
     [router],
   )
+
   return (
     <Box
       sx={{
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
         gap: '20px',
+        '@media screen and (max-width:600px)': {
+          gridTemplateColumns: 'repeat(auto-fill,minmax(300px,1fr))',
+        },
       }}
     >
       {cocktails.map((cocktail) => (
@@ -32,6 +36,10 @@ export const Cocktails = memo(() => {
             display: 'flex',
             flexDirection: 'row',
             gap: 1,
+            '@media screen and (max-width:600px)': {
+              gridTemplateColumns: 'repeat(auto-fill,minmax(300px,1fr))',
+              justifyContent: 'center',
+            },
           }}
           key={cocktail.slug}
         >
