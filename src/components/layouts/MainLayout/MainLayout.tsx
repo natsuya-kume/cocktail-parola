@@ -1,5 +1,5 @@
 import { Box, Toolbar } from '@mui/material'
-import { memo, ReactNode } from 'react'
+import { memo, ReactNode, useState } from 'react'
 import { Footer } from 'src/components/elements/Footer/Footer'
 import { SideBar } from 'src/components/elements/SideBar/SideBar'
 import { TopBar } from 'src/components/elements/TopBar/TopBar'
@@ -11,18 +11,15 @@ type Props = {
 }
 
 export const MainLayout = memo(({ children }: Props) => {
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen)
+  }
+
   return (
     <Box sx={{ display: 'flex' }}>
-      <TopBar />
-      <Box
-        component='nav'
-        sx={{
-          width: sizeConfigs.sidebar.width,
-          flexShrink: 0,
-        }}
-      >
-        <SideBar />
-      </Box>
+      <TopBar handleDrawerToggle={handleDrawerToggle} />
+      <SideBar isDrawerToggleOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
       <Box
         component='main'
         sx={{

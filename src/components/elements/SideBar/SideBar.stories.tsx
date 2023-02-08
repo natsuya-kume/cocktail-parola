@@ -10,7 +10,11 @@ export default {
 export const Default: ComponentStory<typeof SideBar> = () => {
   return (
     <div style={{ backgroundColor: theme.palette.background.default }}>
-      <SideBar />
+      <SideBar
+        isDrawerToggleOpen={false}
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        handleDrawerToggle={() => {}}
+      />
     </div>
   )
 }

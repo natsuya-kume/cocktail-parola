@@ -9,9 +9,10 @@ import { pagesPath } from 'src/lib/$path'
 import { activeSideBarItemAtom } from 'src/stores/atom'
 type Props = {
   item: SideBarNavigationsType
+  handleDrawerToggle?: () => void
 }
 
-export const SideBarItem = memo(({ item }: Props) => {
+export const SideBarItem = memo(({ item, handleDrawerToggle }: Props) => {
   const [sideBarItemState, setActiveSideBarItemState] = useAtom(activeSideBarItemAtom)
   const router = useRouter()
   const onClickSideBarItem = useCallback(() => {
@@ -20,7 +21,8 @@ export const SideBarItem = memo(({ item }: Props) => {
     }
     if (!item.path) return
     router.push(pagesPath.cocktail._slug(item.path).$url())
-  }, [item.path, item.state, router, setActiveSideBarItemState])
+    handleDrawerToggle?.()
+  }, [item.path, item.state, router, setActiveSideBarItemState, handleDrawerToggle])
 
   if (!item.sidebarProps || !item.path) {
     return <></>
