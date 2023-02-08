@@ -1,6 +1,6 @@
 import { InputBase, styled } from '@mui/material'
 import { useAtomValue, useSetAtom } from 'jotai'
-import { ChangeEvent, memo, useCallback, useEffect, useState } from 'react'
+import { ChangeEvent, useCallback, useEffect, useState } from 'react'
 import { colorConfigs } from 'src/config/color'
 import { SearchBar as SearchBarDomain } from 'src/domain/searchBar/searchBar'
 import { cocktailsAtom, searchedCocktailsAtom } from 'src/stores/atom'
@@ -10,8 +10,8 @@ const Search = styled('div')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
   backgroundColor: colorConfigs.topbar.bg,
   border: `1px solid ${colorConfigs.text.secondary}`,
-  marginLeft: 0,
-  width: '100%',
+  marginLeft: 'auto',
+  width: 150,
   [theme.breakpoints.up('sm')]: {
     marginLeft: 'auto',
     width: 'auto',
@@ -30,7 +30,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }))
 
-export const SearchBar = memo(() => {
+export const SearchBar = () => {
   const cocktails = useAtomValue(cocktailsAtom)
   const setSearchedCocktails = useSetAtom(searchedCocktailsAtom)
   const [searchWord, setSearchWord] = useState('')
@@ -63,4 +63,4 @@ export const SearchBar = memo(() => {
       />
     </Search>
   )
-})
+}

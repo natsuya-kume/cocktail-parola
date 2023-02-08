@@ -24,6 +24,10 @@ export const Footer = memo(() => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        '@media screen and (max-width:600px)': {
+          flexDirection: 'column',
+          gap: 0.5,
+        },
       }}
     >
       <Link href={pagesPath.about.$url()} onClick={onClickAboutText}>
@@ -41,11 +45,24 @@ export const Footer = memo(() => {
           このサイトについて
         </Typography>
       </Link>
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '3px' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '3px',
+        }}
+      >
         <Typography
           align='center'
           variant='h5'
-          sx={{ color: theme.palette.text.primary, fontWeight: 700 }}
+          sx={{
+            color: theme.palette.text.primary,
+            fontWeight: 700,
+            '@media screen and (max-width:600px)': {
+              fontSize: 15,
+            },
+          }}
         >
           Made with
         </Typography>
@@ -53,7 +70,13 @@ export const Footer = memo(() => {
         <Typography
           align='center'
           variant='h5'
-          sx={{ color: colorConfigs.text.primary, fontWeight: 700 }}
+          sx={{
+            color: colorConfigs.text.primary,
+            fontWeight: 700,
+            '@media screen and (max-width:600px)': {
+              fontSize: 15,
+            },
+          }}
         >
           by
         </Typography>
@@ -67,6 +90,9 @@ export const Footer = memo(() => {
               display: 'inline-block',
               '&:hover': {
                 opacity: 0.8,
+              },
+              '@media screen and (max-width:600px)': {
+                fontSize: 15,
               },
             }}
           >
