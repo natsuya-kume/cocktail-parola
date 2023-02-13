@@ -54,7 +54,7 @@ export const Cocktails = memo(() => {
                   gutterBottom
                   variant='h5'
                   component='div'
-                  sx={{ color: theme.palette.text.primary, fontWeight: 700 }}
+                  sx={{ color: colorConfigs.text.tertiary, fontWeight: 700 }}
                 >
                   {cocktail.name}
                 </Typography>
