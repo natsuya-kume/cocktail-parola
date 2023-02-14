@@ -6,7 +6,8 @@ import { sideBarNavigationsAtom } from 'src/stores/atom'
 
 export const useSideBar = (cocktails: CocktailsType[]) => {
   const [sideBarNavigations, setSideBarNavigations] = useAtom(sideBarNavigationsAtom)
-  const sideBarNavigationsList = SideBar.getSideBarNavigationsList(cocktails)
+  const sideBarNavigationsList = SideBar.getSideBarNavigationsListGroupedByCocktailBase(cocktails)
+
   useEffect(() => {
     if (sideBarNavigations.length) return
     setSideBarNavigations(sideBarNavigationsList)

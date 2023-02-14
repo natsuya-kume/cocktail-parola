@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { theme } from 'src/config/theme'
-import { CocktailType, HowToMakeType } from 'src/domain/cocktails/types/cocktail'
+import { CocktailBaseType, CocktailType, HowToMakeType } from 'src/domain/cocktails/types/cocktail'
 import { Cocktail } from 'src/features/cocktail/Cocktail'
 
 export default {
@@ -23,6 +23,7 @@ const cocktail = {
     blurDataURL:
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AFxCHXNiUgsDAADVxaT/+OWtnXQAvaqAl4NVcF0mALing6+hfaCUbFNtEmE1OX0fAAAAAElFTkSuQmCC',
   },
+  base: 1 as CocktailBaseType,
   publishDate: '2023-01-25T15:00:00.000Z',
   slug: 'margarita',
   description:
