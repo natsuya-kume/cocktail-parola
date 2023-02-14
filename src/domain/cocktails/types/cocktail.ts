@@ -1,5 +1,5 @@
 export type HowToMakeType = 'ビルド' | 'シェイク'
-export type CocktaiType = 'ショート' | 'ロング'
+export type CocktailType = 'ショート' | 'ロング'
 
 export type CocktailsType = {
   name: string
@@ -13,7 +13,7 @@ export type CocktailsType = {
   }
   publishDate: string
   description: string
-  cocktailType: CocktaiType
+  cocktailType: CocktailType
   howToMake: HowToMakeType
   createdAt?: string
   updatedAt?: string

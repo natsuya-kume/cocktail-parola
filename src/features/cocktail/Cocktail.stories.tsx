@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { theme } from 'src/config/theme'
-import { CocktaiType, HowToMakeType } from 'src/domain/cocktails/types/cocktail'
-import { Cocktail } from 'src/features/cocktail/components/Cocktail'
+import { CocktailType, HowToMakeType } from 'src/domain/cocktails/types/cocktail'
+import { Cocktail } from 'src/features/cocktail/Cocktail'
 
 export default {
   title: 'features/cocktail/cocktail',
@@ -27,7 +27,7 @@ const cocktail = {
   slug: 'margarita',
   description:
     'マルガリータの説明が入ります(現在準備中です。)マルガリータの説明が入ります(現在準備中です。)マルガリータの説明が入ります(現在準備中です。)マルガリータの説明が入ります(現在準備中です。)マルガリータの説明が入ります(現在準備中です。)マルガリータの説明が入ります(現在準備中です。)マルガリータの説明が入ります(現在準備中です。)マルガリータの説明が入ります(現在準備中です。)マルガリータの説明が入ります(現在準備中です。)マルガリータの説明が入ります(現在準備中です。)マルガリータの説明が入ります(現在準備中です。)',
-  cocktailType: 'ショート' as CocktaiType,
+  cocktailType: 'ショート' as CocktailType,
   howToMake: 'シェイク' as HowToMakeType,
 }
 

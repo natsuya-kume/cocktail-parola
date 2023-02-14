@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { memo } from 'react'
 import { theme } from 'src/config/theme'
 import { CocktailsType } from 'src/domain/cocktails/types/cocktail'
-import { useCocktailDescriptionChipDialog } from 'src/features/cocktail/components/hooks/useCocktailDescriptionChipDialog'
+import { useCocktailDescriptionChipDialog } from 'src/features/cocktail/hooks/useCocktailDescriptionChipDialog'
 
 type Props = {
   cocktail: CocktailsType

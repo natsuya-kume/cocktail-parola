@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next'
 import { getPlaiceholder } from 'plaiceholder'
 import { getAllSlugs, getCocktailBySlug } from 'src/domain/cocktails/api/getCocktail'
 import { CocktailsType, SlugType } from 'src/domain/cocktails/types/cocktail'
-import { Cocktail } from 'src/features/cocktail/components/Cocktail'
+import { Cocktail } from 'src/features/cocktail/Cocktail'
 
 type Props = {
   cocktail: CocktailsType
