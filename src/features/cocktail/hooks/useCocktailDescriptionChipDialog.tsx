@@ -8,17 +8,17 @@ import {
 import { useCallback, useMemo, useState } from 'react'
 import { colorConfigs } from 'src/config/color'
 import { Cocktail } from 'src/domain/cocktails/cocktail'
-import { CocktaiType, HowToMakeType } from 'src/domain/cocktails/types/cocktail'
+import { CocktailType, HowToMakeType } from 'src/domain/cocktails/types/cocktail'
 
 export const useCocktailDescriptionChipDialog = () => {
   const [isOpenDialog, setIsOpenDialog] = useState<boolean>(false)
-  const [selectedValue, setSelectedValue] = useState<HowToMakeType | CocktaiType>('ショート')
+  const [selectedValue, setSelectedValue] = useState<HowToMakeType | CocktailType>('ショート')
 
   const closeDialog = useCallback(() => {
     setIsOpenDialog(false)
   }, [])
 
-  const openDialog = useCallback((value: HowToMakeType | CocktaiType) => {
+  const openDialog = useCallback((value: HowToMakeType | CocktailType) => {
     setIsOpenDialog(true)
     setSelectedValue(value)
   }, [])

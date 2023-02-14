@@ -46,8 +46,10 @@ export const TopBar = memo(({ hasSideBar = true, handleDrawerToggle }: Props) =>
               color: colorConfigs.text.primary,
               fontWeight: 700,
               display: 'inline-block',
+              marginLeft: sizeConfigs.sidebar.width,
               '@media screen and (max-width:600px)': {
                 fontSize: 18,
+                marginLeft: 0,
               },
             }}
           >

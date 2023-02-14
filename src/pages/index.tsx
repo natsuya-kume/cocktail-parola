@@ -2,7 +2,7 @@ import { useSetAtom } from 'jotai'
 import { getPlaiceholder } from 'plaiceholder'
 import { getAllCocktails } from 'src/domain/cocktails/api/getCocktail'
 import { CocktailsType } from 'src/domain/cocktails/types/cocktail'
-import { Cocktails } from 'src/features/cocktail/components/Cocktails'
+import { Cocktails } from 'src/features/cocktail/Cocktails'
 import { cocktailsAtom } from 'src/stores/atom'
 type Props = {
   cocktails: CocktailsType[]

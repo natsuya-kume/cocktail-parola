@@ -1,4 +1,4 @@
-import { CocktaiType, HowToMakeType } from './types/cocktail'
+import { CocktailType, HowToMakeType } from 'src/domain/cocktails/types/cocktail'
 
 const HOW_TO_MAKE_BUILD_MESSAGE =
   'ビルドとはグラスにそのまま注いでカクテルを作ることです。一般的にお酒＋多量のジュースで割るロングカクテルに使われます。お酒の強さをダイレクトに感じるのでショートカクテルにはほぼ使われないです。'
@@ -9,7 +9,7 @@ const COCKTAIL_TYPE_SHORT_MESSAGE =
 const COCKTAIL_TYPE_LONG_MESSAGE =
   'タンブラーなどの大きめなグラスで時間をかけて飲むタイプのカクテルです。ロングカクテルは、大きいグラスに氷が入っていて、氷が冷たさをキープしてくれるので、美味しく飲める時間が長い事から名付けられました。氷が入っているのが大きな特徴でジンやカシスリキュールなどのお酒をソーダやジュースで割るレシピが多く、アルコール度数があまり高くない物が多いのも特徴の1つです。'
 
-const getCocktailShortDescription = (value: HowToMakeType | CocktaiType) => {
+const getCocktailShortDescription = (value: HowToMakeType | CocktailType) => {
   switch (value) {
     case 'ビルド':
       return HOW_TO_MAKE_BUILD_MESSAGE
