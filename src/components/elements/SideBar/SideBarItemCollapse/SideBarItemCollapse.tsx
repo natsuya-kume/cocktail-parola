@@ -18,9 +18,10 @@ import { activeSideBarItemAtom } from 'src/stores/atom'
 
 type Props = {
   item: SideBarNavigationsType
+  handleDrawerToggle?: () => void
 }
 
-export const SideBarItemCollapse = memo(({ item }: Props) => {
+export const SideBarItemCollapse = memo(({ item, handleDrawerToggle }: Props) => {
   const [open, setOpen] = useState(false)
   const sideBarItemState = useAtomValue(activeSideBarItemAtom)
   useEffect(() => {
@@ -72,9 +73,13 @@ export const SideBarItemCollapse = memo(({ item }: Props) => {
           {item.child?.map((route, index) =>
             route.sidebarProps ? (
               route.child ? (
-                <SideBarItemCollapse item={route} key={index} />
+                <SideBarItemCollapse
+                  item={route}
+                  key={index}
+                  handleDrawerToggle={handleDrawerToggle}
+                />
               ) : (
-                <SideBarItem item={route} key={index} />
+                <SideBarItem item={route} key={index} handleDrawerToggle={handleDrawerToggle} />
               )
             ) : null,
           )}

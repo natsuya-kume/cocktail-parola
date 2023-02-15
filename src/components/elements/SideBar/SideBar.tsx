@@ -49,7 +49,12 @@ export const SideBar = memo(({ isDrawerToggleOpen, handleDrawerToggle }: Props) 
         {sideBarNavigations.map((route, index) =>
           route.sidebarProps ? (
             route.child ? (
-              <SideBarItemCollapse item={route} key={index} />
+              <SideBarItemCollapse
+                item={route}
+                key={index}
+                // eslint-disable-next-line @typescript-eslint/no-empty-function
+                handleDrawerToggle={isDrawerToggleOpen ? handleDrawerToggle : () => {}}
+              />
             ) : (
               <SideBarItem
                 item={route}
