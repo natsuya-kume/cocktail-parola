@@ -48,10 +48,9 @@ export const SideBarItemCollapse = memo(({ item }: Props) => {
       >
         <ListItemIcon
           sx={{
-            color: colorConfigs.sidebar.fontColor,
+            color: colorConfigs.text.secondary,
           }}
         >
-          {/* {item.sidebarProps.icon} */}
           <LocalBarOutlinedIcon />
         </ListItemIcon>
         <ListItemText
