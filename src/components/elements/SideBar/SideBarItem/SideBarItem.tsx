@@ -40,7 +40,8 @@ export const SideBarItem = memo(({ item, handleDrawerToggle }: Props) => {
             ? colorConfigs.sidebar.activeBg
             : 'unset',
         paddingY: '12px',
-        paddingX: '24px',
+        paddingRight: '24px',
+        paddingLeft: '44px',
       }}
     >
       <ListItemIcon
@@ -48,7 +49,6 @@ export const SideBarItem = memo(({ item, handleDrawerToggle }: Props) => {
           color: colorConfigs.sidebar.fontColor,
         }}
       >
-        {/* {item.sidebarProps.icon} */}
         <LocalBarOutlinedIcon />
       </ListItemIcon>
       <Typography

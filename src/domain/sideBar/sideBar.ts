@@ -1,3 +1,4 @@
+import { Cocktail } from 'src/domain/cocktails/cocktail'
 import { CocktailsType } from 'src/domain/cocktails/types/cocktail'
 export type SideBarNavigationsType = {
   path: string
@@ -26,6 +27,27 @@ const getSideBarNavigationsList = (list: CocktailsType[]) => {
   }))
 }
 
+const getSideBarNavigationsListGroupedByCocktailBase = (list: CocktailsType[]) => {
+  const cocktailBaseList = Cocktail.getCocktailBaseList(list)
+  return cocktailBaseList.map(
+    (cocktailBaseItem): SideBarNavigationsType => ({
+      path: cocktailBaseItem.base,
+      state: cocktailBaseItem.base,
+      sidebarProps: {
+        displayText: cocktailBaseItem.base,
+      },
+      child: cocktailBaseItem.cocktails.map((cocktail) => ({
+        path: cocktail.slug,
+        state: cocktail.slug,
+        sidebarProps: {
+          displayText: cocktail.name,
+        },
+      })),
+    }),
+  )
+}
+
 export const SideBar = {
   getSideBarNavigationsList,
+  getSideBarNavigationsListGroupedByCocktailBase,
 } as const

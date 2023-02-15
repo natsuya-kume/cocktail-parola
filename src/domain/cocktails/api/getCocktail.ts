@@ -36,7 +36,7 @@ export const getAllCocktails = async (limit = 100) => {
     const posts = await client.get({
       endpoint: 'cocktails',
       queries: {
-        fields: 'name,parola,publishDate,slug,image,description,howToMake,cocktailType',
+        fields: 'name,parola,publishDate,slug,image,description,howToMake,cocktailType,base',
         orders: '-publishDate',
         limit: limit,
       },

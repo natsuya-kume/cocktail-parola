@@ -33,10 +33,8 @@ export const Cocktails = memo(() => {
       {cocktails.map((cocktail) => (
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: 'row',
-            gap: 1,
             '@media screen and (max-width:600px)': {
+              display: 'flex',
               gridTemplateColumns: 'repeat(auto-fill,minmax(300px,1fr))',
               justifyContent: 'center',
             },
@@ -52,7 +50,7 @@ export const Cocktails = memo(() => {
               <CardContent sx={{ backgroundColor: theme.palette.background.default }}>
                 <Typography
                   gutterBottom
-                  variant='h5'
+                  variant='h6'
                   component='div'
                   sx={{ color: theme.palette.text.primary, fontWeight: 700 }}
                 >
