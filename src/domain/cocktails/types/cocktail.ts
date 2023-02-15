@@ -1,6 +1,6 @@
 import { ValueOf } from 'next/dist/shared/lib/constants'
 
-export type HowToMakeType = 'ビルド' | 'シェイク'
+export type HowToMakeType = 'ビルド' | 'シェイク' | 'ステア'
 export type CocktailType = 'ショート' | 'ロング'
 export const COCKTAIL_BASE_TYPE = {
   GIN: 1,
