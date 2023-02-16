@@ -9,6 +9,9 @@ export const COCKTAIL_BASE_TYPE = {
   TEQUILA: 4,
   BRANDY: 5,
   VODKA: 6,
+  RUM: 7,
+  WHISKY: 8,
+  WINE: 9,
 }
 export type CocktailBaseType = ValueOf<typeof COCKTAIL_BASE_TYPE>
 
