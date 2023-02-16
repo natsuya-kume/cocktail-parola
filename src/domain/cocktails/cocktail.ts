@@ -48,6 +48,12 @@ const getCocktailBaseName = (value: CocktailBaseType) => {
       return 'ブランデーベース'
     case COCKTAIL_BASE_TYPE.VODKA:
       return 'ウォッカベース'
+    case COCKTAIL_BASE_TYPE.RUM:
+      return 'ラムベース'
+    case COCKTAIL_BASE_TYPE.WHISKY:
+      return 'ウイスキーベース'
+    case COCKTAIL_BASE_TYPE.WINE:
+      return 'ワインベース'
     default:
       return 'その他'
   }
