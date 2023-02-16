@@ -6,8 +6,20 @@ export default class URLAnimation {
     this.hotel = '🏩'
     this.man = '👨'
     this.woman = '👩'
+
+    // eslint-disable-next-line no-undef
+    if (typeof window !== 'undefined') {
+      // eslint-disable-next-line no-undef
+      const session = window.sessionStorage
+      const isUrlAnimationExecuted = session.getItem('isUrlAnimationExecuted')
+      if (isUrlAnimationExecuted) {
+        return
+      }
+    }
     this.animation().then(() => {
       this.clearHash()
+      // eslint-disable-next-line no-undef
+      sessionStorage.setItem('isUrlAnimationExecuted', 'true')
     })
   }
 
