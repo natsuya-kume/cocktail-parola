@@ -25,9 +25,6 @@ export const Cocktails = memo(() => {
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
         gap: '20px',
-        '@media screen and (max-width:600px)': {
-          gridTemplateColumns: 'repeat(auto-fill,minmax(300px,1fr))',
-        },
       }}
     >
       {cocktails.map((cocktail) => (
@@ -42,23 +39,60 @@ export const Cocktails = memo(() => {
           key={cocktail.slug}
         >
           <Card
-            sx={{ width: 300, backgroundColor: theme.palette.background.default }}
+            sx={{
+              width: 300,
+              backgroundColor: theme.palette.background.default,
+              '@media screen and (max-width:600px)': {
+                width: 100,
+                height: 210,
+              },
+            }}
             onClick={() => onClickCocktail(cocktail.slug)}
           >
             <CardActionArea>
-              <CardMedia component='img' height='350' image={cocktail.image.url} alt='cocktail' />
-              <CardContent sx={{ backgroundColor: theme.palette.background.default }}>
+              <CardMedia
+                component='img'
+                height='350'
+                image={cocktail.image.url}
+                alt='cocktail'
+                sx={{
+                  '@media screen and (max-width:600px)': {
+                    height: 120,
+                  },
+                }}
+              />
+              <CardContent
+                sx={{
+                  backgroundColor: theme.palette.background.default,
+                  '@media screen and (max-width:600px)': {
+                    px: 1,
+                    pt: 1,
+                  },
+                }}
+              >
                 <Typography
                   gutterBottom
                   variant='h6'
                   component='div'
-                  sx={{ color: theme.palette.text.primary, fontWeight: 700 }}
+                  sx={{
+                    color: theme.palette.text.primary,
+                    fontWeight: 700,
+                    '@media screen and (max-width:600px)': {
+                      fontSize: '5px',
+                    },
+                  }}
                 >
                   {cocktail.name}
                 </Typography>
                 <Typography
                   variant='body2'
-                  sx={{ color: colorConfigs.text.tertiary, opacity: 0.6 }}
+                  sx={{
+                    color: colorConfigs.text.tertiary,
+                    opacity: 0.6,
+                    '@media screen and (max-width:600px)': {
+                      fontSize: '5px',
+                    },
+                  }}
                 >
                   {cocktail.parola}
                 </Typography>
