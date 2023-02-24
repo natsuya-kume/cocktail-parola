@@ -3,7 +3,6 @@ import { useAtomValue } from 'jotai'
 import { useRouter } from 'next/router'
 import { memo, useCallback } from 'react'
 import { colorConfigs } from 'src/config/color'
-import { theme } from 'src/config/theme'
 import { cocktailsAtom, searchedCocktailsAtom } from 'src/stores/atom'
 
 export const Cocktails = memo(() => {
@@ -25,6 +24,10 @@ export const Cocktails = memo(() => {
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
         gap: '20px',
+        '@media screen and (max-width:600px)': {
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: '13px',
+        },
       }}
     >
       {cocktails.map((cocktail) => (
@@ -41,13 +44,14 @@ export const Cocktails = memo(() => {
           <Card
             sx={{
               width: 300,
-              backgroundColor: theme.palette.background.default,
+              backgroundColor: 'background.default',
               '@media screen and (max-width:600px)': {
-                width: 100,
-                height: 210,
+                width: 150,
+                height: 280,
               },
             }}
             onClick={() => onClickCocktail(cocktail.slug)}
+            elevation={0}
           >
             <CardActionArea>
               <CardMedia
@@ -57,13 +61,13 @@ export const Cocktails = memo(() => {
                 alt='cocktail'
                 sx={{
                   '@media screen and (max-width:600px)': {
-                    height: 120,
+                    height: 200,
                   },
                 }}
               />
               <CardContent
                 sx={{
-                  backgroundColor: theme.palette.background.default,
+                  backgroundColor: 'background.default',
                   '@media screen and (max-width:600px)': {
                     px: 1,
                     pt: 1,
@@ -75,7 +79,7 @@ export const Cocktails = memo(() => {
                   variant='h6'
                   component='div'
                   sx={{
-                    color: theme.palette.text.primary,
+                    color: 'primary.main',
                     fontWeight: 700,
                     '@media screen and (max-width:600px)': {
                       fontSize: '5px',

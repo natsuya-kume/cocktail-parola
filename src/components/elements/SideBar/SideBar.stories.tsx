@@ -14,6 +14,9 @@ export const Default: ComponentStory<typeof SideBar> = () => {
         isDrawerToggleOpen={false}
         // eslint-disable-next-line @typescript-eslint/no-empty-function
         handleDrawerToggle={() => {}}
+        themeColor='dark'
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        handleChangeThemeColor={() => {}}
       />
     </div>
   )

@@ -33,7 +33,11 @@ export const SideBarItemCollapse = memo(({ item, handleDrawerToggle }: Props) =>
   if (!item.sidebarProps) {
     return <></>
   }
-  const renderExpandIcon = open ? <ExpandLessOutlinedIcon /> : <ExpandMoreOutlinedIcon />
+  const renderExpandIcon = open ? (
+    <ExpandLessOutlinedIcon sx={{ color: 'primary.main' }} />
+  ) : (
+    <ExpandMoreOutlinedIcon sx={{ color: 'primary.main' }} />
+  )
 
   return (
     <>
@@ -41,7 +45,7 @@ export const SideBarItemCollapse = memo(({ item, handleDrawerToggle }: Props) =>
         onClick={() => setOpen(!open)}
         sx={{
           '&: hover': {
-            backgroundColor: colorConfigs.sidebar.hoverBg,
+            backgroundColor: 'primary.light',
           },
           paddingY: '12px',
           paddingX: '24px',
@@ -59,7 +63,7 @@ export const SideBarItemCollapse = memo(({ item, handleDrawerToggle }: Props) =>
           primary={
             <Typography
               sx={{
-                color: colorConfigs.sidebar.fontColor,
+                color: 'primary.main',
               }}
             >
               {item.sidebarProps.displayText}

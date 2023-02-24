@@ -1,15 +1,6 @@
-import { colors } from '@mui/material'
-
 export const colorConfigs = {
   sidebar: {
-    bg: '#282a36',
-    hoverBg: '#383a59',
     activeBg: '#ff79c6',
-    fontColor: '#f8f8f2',
-  },
-  topbar: {
-    bg: '#282a36',
-    color: '#000',
   },
   text: {
     primary: '#f8f8f2',
@@ -18,8 +9,4 @@ export const colorConfigs = {
     quaternary: '#48bd67',
     quinary: '#ff79c6',
   },
-  bg: {
-    primary: '#282a36',
-  },
-  mainBg: colors.grey['100'],
 }

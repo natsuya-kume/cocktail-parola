@@ -33,7 +33,7 @@ export const SideBarItem = memo(({ item, handleDrawerToggle }: Props) => {
       onClick={onClickSideBarItem}
       sx={{
         '&: hover': {
-          backgroundColor: colorConfigs.sidebar.hoverBg,
+          backgroundColor: 'primary.light',
         },
         backgroundColor:
           sideBarItemState.activeSideBarItemState === item.state
@@ -46,14 +46,14 @@ export const SideBarItem = memo(({ item, handleDrawerToggle }: Props) => {
     >
       <ListItemIcon
         sx={{
-          color: colorConfigs.sidebar.fontColor,
+          color: 'primary.main',
         }}
       >
         <LocalBarOutlinedIcon />
       </ListItemIcon>
       <Typography
         sx={{
-          color: colorConfigs.sidebar.fontColor,
+          color: 'primary.main',
         }}
       >
         {item.sidebarProps.displayText}
