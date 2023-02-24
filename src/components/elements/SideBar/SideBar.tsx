@@ -8,13 +8,14 @@ import { SideBarItemCollapse } from 'src/components/elements/SideBar/SideBarItem
 import { useSideBar } from 'src/components/elements/SideBar/useSideBar'
 import { MaterialUISwitch } from 'src/components/elements/ThemeColorSwitch/ThemeColorSwitch'
 import { sizeConfigs } from 'src/config/size'
+import { ThemeColorType } from 'src/config/theme'
 import { pagesPath } from 'src/lib/$path'
 import { activeSideBarItemAtom, cocktailsAtom } from 'src/stores/atom'
 
 type Props = {
   isDrawerToggleOpen: boolean
   handleDrawerToggle: () => void
-  themeColor: 'light' | 'dark'
+  themeColor: ThemeColorType
   handleChangeThemeColor: Dispatch<SetStateAction<'light' | 'dark'>>
 }
 

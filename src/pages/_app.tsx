@@ -7,7 +7,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 import URLAnimation from 'src/assets/js/classUrlAnimation'
 import { MainLayout } from 'src/components/layouts/MainLayout/MainLayout'
-import { getColorTheme } from 'src/config/theme'
+import { getColorTheme, ThemeColorType } from 'src/config/theme'
 import createEmotionCache from 'src/lib/createEmotionCache'
 new URLAnimation()
 const clientSideEmotionCache = createEmotionCache()
@@ -17,7 +17,7 @@ interface MyAppProps extends AppProps {
 
 function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
-  const [mode, setMode] = useState<'light' | 'dark'>('light')
+  const [mode, setMode] = useState<ThemeColorType>('light')
 
   const theme = getColorTheme(mode)
 

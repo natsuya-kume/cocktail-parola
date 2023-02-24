@@ -1,5 +1,7 @@
 import { createTheme } from '@mui/material/styles'
 
+export type ThemeColorType = 'light' | 'dark'
+
 export const theme = createTheme({
   palette: {
     background: {
@@ -12,7 +14,7 @@ export const theme = createTheme({
   },
 })
 
-export const getColorTheme = (mode: 'light' | 'dark') => {
+export const getColorTheme = (mode: ThemeColorType) => {
   return createTheme({
     typography: {
       fontFamily: ['Cormorant', 'serif'].join(','),

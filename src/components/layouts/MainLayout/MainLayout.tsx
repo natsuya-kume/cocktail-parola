@@ -4,11 +4,12 @@ import { Footer } from 'src/components/elements/Footer/Footer'
 import { SideBar } from 'src/components/elements/SideBar/SideBar'
 import { TopBar } from 'src/components/elements/TopBar/TopBar'
 import { sizeConfigs } from 'src/config/size'
+import { ThemeColorType } from 'src/config/theme'
 
 type Props = {
   children: ReactNode
   handleChangeThemeColor: Dispatch<SetStateAction<'light' | 'dark'>>
-  themeColor: 'light' | 'dark'
+  themeColor: ThemeColorType
 }
 
 export const MainLayout = memo(({ children, handleChangeThemeColor, themeColor }: Props) => {
