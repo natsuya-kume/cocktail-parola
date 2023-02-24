@@ -6,7 +6,6 @@ import {
 } from '@mui/material'
 
 import { useCallback, useMemo, useState } from 'react'
-import { colorConfigs } from 'src/config/color'
 import { Cocktail } from 'src/domain/cocktails/cocktail'
 import { CocktailType, HowToMakeType } from 'src/domain/cocktails/types/cocktail'
 
@@ -32,13 +31,14 @@ export const useCocktailDescriptionChipDialog = () => {
     const DialogComponent = () => {
       return (
         <SimpleDialog onClose={closeDialog} open={isOpenDialog}>
-          <DialogTitle textAlign='center'>{selectedValue}とは？</DialogTitle>
-          <DialogContent>
-            <DialogContentText
-              id='alert-dialog-description'
-              color={colorConfigs.text.primary}
-              lineHeight={2}
-            >
+          <DialogTitle
+            textAlign='center'
+            sx={{ backgroundColor: 'background.paper', color: 'primary.main' }}
+          >
+            {selectedValue}とは？
+          </DialogTitle>
+          <DialogContent sx={{ backgroundColor: 'background.paper' }}>
+            <DialogContentText id='alert-dialog-description' color={'primary.main'} lineHeight={2}>
               {cocktailChipDescription}
             </DialogContentText>
           </DialogContent>

@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@mui/material'
 import { RouterContext } from 'next/dist/shared/lib/router-context'
 import * as nextImage from 'next/image'
-import { theme } from '../src/config/theme'
+import { getColorTheme } from '../src/config/theme'
 Object.defineProperty(nextImage, 'default', {
   configurable: true,
   value: (props) => <img {...props} />,
@@ -19,6 +19,8 @@ export const parameters = {
     Provider: RouterContext.Provider,
   },
 }
+
+const theme = getColorTheme('dark')
 
 export const decorators = [
   (Story) => (

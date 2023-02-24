@@ -12,11 +12,7 @@ export default class MyDocument extends Document {
           <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons' />
           {(this.props as any).emotionStyleTags}
         </Head>
-        <body
-          style={{
-            backgroundColor: theme.palette.background.paper,
-          }}
-        >
+        <body>
           <Main />
           <NextScript />
         </body>

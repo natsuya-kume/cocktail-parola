@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { memo, useMemo } from 'react'
 import { SearchBar } from 'src/components/elements/SearchBar/SearchBar'
-import { colorConfigs } from 'src/config/color'
 import { sizeConfigs } from 'src/config/size'
 import { pagesPath } from 'src/lib/$path'
 
@@ -22,12 +21,12 @@ export const TopBar = memo(({ hasSideBar = true, handleDrawerToggle }: Props) =>
   return (
     <AppBar
       position='fixed'
+      color='transparent'
       sx={{
         width: hasSideBar ? { sm: `calc(100% - ${sizeConfigs.sidebar.width}px)` } : '100%',
         ml: sizeConfigs.sidebar.width,
         boxShadow: '0 5px 10px 0 rgb(0 0 0 / 15%)',
-        backgroundColor: colorConfigs.topbar.bg,
-        color: colorConfigs.topbar.color,
+        backgroundColor: 'background.default',
       }}
     >
       <Toolbar>
@@ -35,7 +34,7 @@ export const TopBar = memo(({ hasSideBar = true, handleDrawerToggle }: Props) =>
           aria-label='open drawer'
           edge='start'
           onClick={handleDrawerToggle}
-          sx={{ mr: 2, display: { sm: 'none' }, color: colorConfigs.text.primary }}
+          sx={{ mr: 2, display: { sm: 'none' }, color: 'primary.main' }}
         >
           <MenuIcon />
         </IconButton>
@@ -43,9 +42,9 @@ export const TopBar = memo(({ hasSideBar = true, handleDrawerToggle }: Props) =>
           <Typography
             variant='h5'
             sx={{
-              color: colorConfigs.text.primary,
               fontWeight: 700,
               display: 'inline-block',
+              color: 'primary.main',
               marginLeft: sizeConfigs.sidebar.width,
               '@media screen and (max-width:600px)': {
                 fontSize: 18,

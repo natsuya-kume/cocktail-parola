@@ -42,14 +42,14 @@ export const Cocktail = memo(({ cocktail }: Props) => {
             },
           }}
         >
-          <Typography variant='h4' sx={{ color: theme.palette.text.primary }}>
+          <Typography variant='h4' sx={{ color: 'primary.main' }}>
             {cocktail.name}
           </Typography>
           <Typography variant='h5' sx={{ color: theme.palette.text.secondary }}>
             {cocktail.parola}
           </Typography>
         </Box>
-        <Typography variant='h6' sx={{ color: theme.palette.text.primary, mt: 3 }}>
+        <Typography variant='h6' sx={{ color: 'primary.main', mt: 3 }}>
           {cocktail.description}
         </Typography>
         <Box
@@ -72,7 +72,7 @@ export const Cocktail = memo(({ cocktail }: Props) => {
               gap: 1,
             }}
           >
-            <Typography variant='h6' sx={{ color: theme.palette.text.primary }}>
+            <Typography variant='h6' sx={{ color: 'primary.main' }}>
               作り方:{cocktail.howToMake}
             </Typography>
             <Chip
@@ -80,6 +80,7 @@ export const Cocktail = memo(({ cocktail }: Props) => {
               label='?'
               variant='outlined'
               size='small'
+              color='primary'
               sx={{
                 cursor: 'pointer',
                 '&:hover': {
@@ -95,7 +96,7 @@ export const Cocktail = memo(({ cocktail }: Props) => {
               gap: 1,
             }}
           >
-            <Typography variant='h6' sx={{ color: theme.palette.text.primary }}>
+            <Typography variant='h6' sx={{ color: 'primary.main' }}>
               タイプ:{cocktail.cocktailType}
             </Typography>
             <Chip
@@ -103,6 +104,7 @@ export const Cocktail = memo(({ cocktail }: Props) => {
               label='?'
               variant='outlined'
               size='small'
+              color='primary'
               sx={{
                 cursor: 'pointer',
                 '&:hover': {

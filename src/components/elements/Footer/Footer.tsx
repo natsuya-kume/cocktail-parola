@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { memo, useCallback } from 'react'
 import styles from 'src/components/elements/Footer/styles.module.css'
 import { colorConfigs } from 'src/config/color'
-import { theme } from 'src/config/theme'
 import { pagesPath } from 'src/lib/$path'
 import { activeSideBarItemAtom } from 'src/stores/atom'
 export const Footer = memo(() => {
@@ -17,7 +16,7 @@ export const Footer = memo(() => {
     <Box
       sx={{
         padding: '30px 20px',
-        backgroundColor: theme.palette.background.default,
+        backgroundColor: 'background.default',
         position: 'absolute',
         bottom: 0,
         width: '100%',
@@ -35,7 +34,7 @@ export const Footer = memo(() => {
           align='center'
           variant='h6'
           sx={{
-            color: colorConfigs.text.primary,
+            color: 'primary.main',
             display: 'inline-block',
             '&:hover': {
               opacity: 0.8,
@@ -57,7 +56,7 @@ export const Footer = memo(() => {
           align='center'
           variant='h5'
           sx={{
-            color: theme.palette.text.primary,
+            color: 'primary.main',
             fontWeight: 700,
             '@media screen and (max-width:600px)': {
               fontSize: 15,
@@ -71,7 +70,7 @@ export const Footer = memo(() => {
           align='center'
           variant='h5'
           sx={{
-            color: colorConfigs.text.primary,
+            color: 'primary.main',
             fontWeight: 700,
             '@media screen and (max-width:600px)': {
               fontSize: 15,

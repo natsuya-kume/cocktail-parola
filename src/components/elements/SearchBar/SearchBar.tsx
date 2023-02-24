@@ -8,7 +8,7 @@ import { cocktailsAtom, searchedCocktailsAtom } from 'src/stores/atom'
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: colorConfigs.topbar.bg,
+  backgroundColor: 'background.default',
   border: `1px solid ${colorConfigs.text.secondary}`,
   marginLeft: 'auto',
   width: 150,
@@ -19,7 +19,7 @@ const Search = styled('div')(({ theme }) => ({
 }))
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: colorConfigs.text.primary,
+  color: 'primary.text',
   fontWeight: 'bold',
   fontSize: '20px',
   '& .MuiInputBase-input': {
