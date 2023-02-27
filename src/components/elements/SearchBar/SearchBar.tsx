@@ -1,7 +1,7 @@
 import { InputBase, styled } from '@mui/material'
 import { useAtomValue, useSetAtom } from 'jotai'
 import { ChangeEvent, useCallback, useEffect, useState } from 'react'
-import { colorConfigs } from 'src/config/color'
+import { colorConfigs } from 'src/config/theme'
 import { SearchBar as SearchBarDomain } from 'src/domain/searchBar/searchBar'
 import { cocktailsAtom, searchedCocktailsAtom } from 'src/stores/atom'
 

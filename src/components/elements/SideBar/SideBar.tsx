@@ -16,7 +16,7 @@ type Props = {
   isDrawerToggleOpen: boolean
   handleDrawerToggle: () => void
   themeColor: ThemeColorType
-  handleChangeThemeColor: Dispatch<SetStateAction<'light' | 'dark'>>
+  handleChangeThemeColor: Dispatch<SetStateAction<ThemeColorType>>
 }
 
 export const SideBar = memo(
@@ -45,7 +45,7 @@ export const SideBar = memo(
                 onClick={() =>
                   handleChangeThemeColor((prev) => (prev === 'light' ? 'dark' : 'light'))
                 }
-                control={<MaterialUISwitch />}
+                control={<MaterialUISwitch defaultChecked />}
                 label=''
                 sx={{ position: 'absolute', left: 0, top: '10%' }}
               />

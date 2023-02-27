@@ -12,7 +12,7 @@ import {
 import { useAtomValue } from 'jotai'
 import { memo, useEffect, useState } from 'react'
 import { SideBarItem } from 'src/components/elements/SideBar/SideBarItem/SideBarItem'
-import { colorConfigs } from 'src/config/color'
+import { colorConfigs } from 'src/config/theme'
 import { SideBarNavigationsType } from 'src/domain/sideBar/sideBar'
 import { activeSideBarItemAtom } from 'src/stores/atom'
 

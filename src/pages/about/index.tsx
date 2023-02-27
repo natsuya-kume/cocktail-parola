@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import Link from 'next/link'
-import { colorConfigs } from 'src/config/color'
+import { colorConfigs } from 'src/config/theme'
 
 export default function AboutPage() {
   return (

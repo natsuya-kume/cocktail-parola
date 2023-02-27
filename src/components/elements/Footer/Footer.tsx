@@ -3,7 +3,7 @@ import { useSetAtom } from 'jotai'
 import Link from 'next/link'
 import { memo, useCallback } from 'react'
 import styles from 'src/components/elements/Footer/styles.module.css'
-import { colorConfigs } from 'src/config/color'
+import { colorConfigs } from 'src/config/theme'
 import { pagesPath } from 'src/lib/$path'
 import { activeSideBarItemAtom } from 'src/stores/atom'
 export const Footer = memo(() => {

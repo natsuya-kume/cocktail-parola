@@ -5,6 +5,14 @@ import { theme } from 'src/config/theme'
 export default {
   title: 'elements/SideBar/SideBarItem',
   component: SideBarItem,
+  argTypes: {
+    item: {
+      description: 'サイドバーに表示するアイテム',
+    },
+    handleDrawerToggle: {
+      description: 'mbで表示するドロワーを操作するときに使用する関数',
+    },
+  },
 } as ComponentMeta<typeof SideBarItem>
 
 export const Default: ComponentStory<typeof SideBarItem> = () => {
