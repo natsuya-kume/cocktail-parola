@@ -8,7 +8,7 @@ import { ThemeColorType } from 'src/config/theme'
 
 type Props = {
   children: ReactNode
-  handleChangeThemeColor: Dispatch<SetStateAction<'light' | 'dark'>>
+  handleChangeThemeColor: Dispatch<SetStateAction<ThemeColorType>>
   themeColor: ThemeColorType
 }
 

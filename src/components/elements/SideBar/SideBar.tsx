@@ -16,7 +16,7 @@ type Props = {
   isDrawerToggleOpen: boolean
   handleDrawerToggle: () => void
   themeColor: ThemeColorType
-  handleChangeThemeColor: Dispatch<SetStateAction<'light' | 'dark'>>
+  handleChangeThemeColor: Dispatch<SetStateAction<ThemeColorType>>
 }
 
 export const SideBar = memo(
