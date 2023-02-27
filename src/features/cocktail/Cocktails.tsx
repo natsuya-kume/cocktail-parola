@@ -2,7 +2,7 @@ import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@
 import { useAtomValue } from 'jotai'
 import { useRouter } from 'next/router'
 import { memo, useCallback } from 'react'
-import { colorConfigs } from 'src/config/color'
+import { colorConfigs } from 'src/config/theme'
 import { pagesPath } from 'src/lib/$path'
 import { cocktailsAtom, searchedCocktailsAtom } from 'src/stores/atom'
 
