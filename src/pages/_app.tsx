@@ -17,7 +17,7 @@ interface MyAppProps extends AppProps {
 
 function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
-  const [mode, setMode] = useState<ThemeColorType>('light')
+  const [mode, setMode] = useState<ThemeColorType>('dark')
 
   const theme = getColorTheme(mode)
 

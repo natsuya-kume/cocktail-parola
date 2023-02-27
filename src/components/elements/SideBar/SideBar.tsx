@@ -45,7 +45,7 @@ export const SideBar = memo(
                 onClick={() =>
                   handleChangeThemeColor((prev) => (prev === 'light' ? 'dark' : 'light'))
                 }
-                control={<MaterialUISwitch />}
+                control={<MaterialUISwitch defaultChecked />}
                 label=''
                 sx={{ position: 'absolute', left: 0, top: '10%' }}
               />
