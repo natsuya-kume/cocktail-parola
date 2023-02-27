@@ -3,6 +3,7 @@ import { useAtomValue } from 'jotai'
 import { useRouter } from 'next/router'
 import { memo, useCallback } from 'react'
 import { colorConfigs } from 'src/config/color'
+import { pagesPath } from 'src/lib/$path'
 import { cocktailsAtom, searchedCocktailsAtom } from 'src/stores/atom'
 
 export const Cocktails = memo(() => {
@@ -13,7 +14,7 @@ export const Cocktails = memo(() => {
 
   const onClickCocktail = useCallback(
     (slug: string) => {
-      router.push(`/cocktail/${slug}`)
+      router.push(pagesPath.cocktail._slug(slug).$url())
     },
     [router],
   )
