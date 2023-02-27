@@ -1,5 +1,6 @@
 import { useSetAtom } from 'jotai'
 import { getPlaiceholder } from 'plaiceholder'
+import Meta from 'src/components/layouts/Meta/Meta'
 import { getAllCocktails } from 'src/domain/cocktails/api/getCocktail'
 import { CocktailsType } from 'src/domain/cocktails/types/cocktail'
 import { Cocktails } from 'src/features/cocktail/Cocktails'
@@ -12,7 +13,15 @@ const HomePage = ({ cocktails }: Props) => {
   const setCocktails = useSetAtom(cocktailsAtom)
 
   setCocktails(cocktails)
-  return <Cocktails />
+  return (
+    <>
+      <Meta
+        pageTitle='Cocktail Parola - トップページ'
+        pageDesc='カクテル言葉紹介サイト「Cocktail Parola」のトップページです'
+      />
+      <Cocktails />
+    </>
+  )
 }
 
 export default HomePage

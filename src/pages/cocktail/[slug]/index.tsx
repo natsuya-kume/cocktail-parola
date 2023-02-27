@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next'
 import { getPlaiceholder } from 'plaiceholder'
+import Meta from 'src/components/layouts/Meta/Meta'
 import { getAllSlugs, getCocktailBySlug } from 'src/domain/cocktails/api/getCocktail'
 import { CocktailsType, SlugType } from 'src/domain/cocktails/types/cocktail'
 import { Cocktail } from 'src/features/cocktail/Cocktail'
@@ -9,7 +10,15 @@ type Props = {
 }
 
 export default function CocktailPage({ cocktail }: Props) {
-  return <Cocktail cocktail={cocktail} />
+  return (
+    <>
+      <Meta
+        pageTitle='Cocktail Parola - カクテル詳細ページ'
+        pageDesc='カクテル言葉紹介サイト「Cocktail Parola」のカクテル詳細ページです'
+      />
+      <Cocktail cocktail={cocktail} />
+    </>
+  )
 }
 
 export const getStaticPaths = async () => {
