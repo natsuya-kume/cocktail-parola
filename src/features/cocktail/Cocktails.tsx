@@ -83,7 +83,8 @@ export const Cocktails = memo(() => {
                     color: 'primary.main',
                     fontWeight: 700,
                     '@media screen and (max-width:600px)': {
-                      fontSize: '5px',
+                      fontSize: '15px',
+                      margin: 0,
                     },
                   }}
                 >
