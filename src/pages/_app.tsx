@@ -5,11 +5,11 @@ import { Provider as JotaiProvider } from 'jotai'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useState } from 'react'
-import URLAnimation from 'src/assets/js/classUrlAnimation'
+// import URLAnimation from 'src/assets/js/classUrlAnimation'
 import { MainLayout } from 'src/components/layouts/MainLayout/MainLayout'
 import { getColorTheme, ThemeColorType } from 'src/config/theme'
 import createEmotionCache from 'src/lib/createEmotionCache'
-new URLAnimation()
+// new URLAnimation()
 const clientSideEmotionCache = createEmotionCache()
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache
